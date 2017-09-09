@@ -12,16 +12,20 @@
 		B7923E781F6033BF00F671B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7923E761F6033BF00F671B9 /* Main.storyboard */; };
 		B7923E7A1F6033BF00F671B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7923E791F6033BF00F671B9 /* Assets.xcassets */; };
 		B7923E7D1F6033BF00F671B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7923E7B1F6033BF00F671B9 /* LaunchScreen.storyboard */; };
+		B7C036531F6425F20032311C /* LEENavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C036521F6425F20032311C /* LEENavController.swift */; };
+		B7C036551F6426C40032311C /* LEELotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C036541F6426C40032311C /* LEELotController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B7923E6F1F6033BF00F671B9 /* LEERandom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEERandom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7923E721F6033BF00F671B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B7923E741F6033BF00F671B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B7923E741F6033BF00F671B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../ViewController.swift; sourceTree = "<group>"; };
 		B7923E771F6033BF00F671B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B7923E791F6033BF00F671B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7923E7C1F6033BF00F671B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B7923E7E1F6033BF00F671B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7923E7E1F6033BF00F671B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
+		B7C036521F6425F20032311C /* LEENavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEENavController.swift; sourceTree = "<group>"; };
+		B7C036541F6426C40032311C /* LEELotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEELotController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,112 @@
 		B7923E711F6033BF00F671B9 /* LEERandom */ = {
 			isa = PBXGroup;
 			children = (
-				B7923E721F6033BF00F671B9 /* AppDelegate.swift */,
-				B7923E741F6033BF00F671B9 /* ViewController.swift */,
-				B7923E761F6033BF00F671B9 /* Main.storyboard */,
 				B7923E791F6033BF00F671B9 /* Assets.xcassets */,
+				B7923E721F6033BF00F671B9 /* AppDelegate.swift */,
+				B7923E761F6033BF00F671B9 /* Main.storyboard */,
+				B7C036461F6425640032311C /* Class */,
+			);
+			path = LEERandom;
+			sourceTree = "<group>";
+		};
+		B7C036461F6425640032311C /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				B7C036471F6425640032311C /* Base */,
+				B7C036491F6425640032311C /* One */,
+				B7C0364D1F6425640032311C /* Two */,
+				B7C036511F6425850032311C /* Other */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		B7C036471F6425640032311C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B7C036481F6425640032311C /* Controller */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B7C036481F6425640032311C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7923E741F6033BF00F671B9 /* ViewController.swift */,
+				B7C036521F6425F20032311C /* LEENavController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B7C036491F6425640032311C /* One */ = {
+			isa = PBXGroup;
+			children = (
+				B7C0364A1F6425640032311C /* Controller */,
+				B7C0364B1F6425640032311C /* Other */,
+				B7C0364C1F6425640032311C /* View */,
+			);
+			path = One;
+			sourceTree = "<group>";
+		};
+		B7C0364A1F6425640032311C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7C036541F6426C40032311C /* LEELotController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B7C0364B1F6425640032311C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		B7C0364C1F6425640032311C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B7C0364D1F6425640032311C /* Two */ = {
+			isa = PBXGroup;
+			children = (
+				B7C0364E1F6425640032311C /* Controller */,
+				B7C0364F1F6425640032311C /* Other */,
+				B7C036501F6425640032311C /* View */,
+			);
+			path = Two;
+			sourceTree = "<group>";
+		};
+		B7C0364E1F6425640032311C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B7C0364F1F6425640032311C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		B7C036501F6425640032311C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B7C036511F6425850032311C /* Other */ = {
+			isa = PBXGroup;
+			children = (
 				B7923E7B1F6033BF00F671B9 /* LaunchScreen.storyboard */,
 				B7923E7E1F6033BF00F671B9 /* Info.plist */,
 			);
-			path = LEERandom;
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +192,7 @@
 		B7923E671F6033BF00F671B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LEE;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = lijiangbo;
@@ -137,7 +240,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7C036531F6425F20032311C /* LEENavController.swift in Sources */,
 				B7923E751F6033BF00F671B9 /* ViewController.swift in Sources */,
+				B7C036551F6426C40032311C /* LEELotController.swift in Sources */,
 				B7923E731F6033BF00F671B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +264,7 @@
 				B7923E7C1F6033BF00F671B9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -304,6 +410,7 @@
 				B7923E831F6033BF00F671B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
