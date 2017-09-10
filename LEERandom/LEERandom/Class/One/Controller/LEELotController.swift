@@ -29,7 +29,8 @@ class LEELotController: ViewController {
     fileprivate var gravity: UIGravityBehavior?
     fileprivate var collision: UICollisionBehavior?
     fileprivate var dynamicItemBehavior: UIDynamicItemBehavior?
-    fileprivate var balls: Array<UIImageView>?
+    fileprivate var leaderAttach: UIAttachmentBehavior?
+    fileprivate var balls: Array<UIImageView> = Array()
     fileprivate var motionManger: CMMotionManager!
     
     override func viewDidLoad() {
@@ -115,6 +116,7 @@ class LEELotController: ViewController {
             isMachineImage = true
             machineBallImage.image = #imageLiteral(resourceName: "machine")
             setDynamicAnimator()
+            addGes()
         }
         addBall(count: count)
     }
@@ -156,6 +158,13 @@ extension LEELotController {
             self.gravity?.angle = CGFloat(rotation)
         }
     }
+    //MARK: 增加手势
+    fileprivate func addGes() {
+        //增加手势
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(panAction(pan:)))
+        addBallView.addGestureRecognizer(pan)
+        addBallView.isUserInteractionEnabled = true
+    }
     
     fileprivate func addBall(count: Int) {
         
@@ -172,11 +181,38 @@ extension LEELotController {
         ballImage.frame = CGRect(x: addBallView.LEE_Width / 2.0 - 15.0 + CGFloat(arc4random_uniform(18)), y: 5, width: 49, height: 49)
         
         addBallView.addSubview(ballImage)
-        balls?.append(ballImage)
+        balls.append(ballImage)
         
         gravity?.addItem(ballImage)
         collision?.addItem(ballImage)
         dynamicItemBehavior?.addItem(ballImage)
+    }
+    
+    func panAction(pan: UIPanGestureRecognizer) {
+        
+        let loc = pan.location(in: addBallView)
+        print(loc)
+        if pan.state == .began {
+            
+            var img: UIImageView?
+            for item: UIImageView in balls {
+                if item.frame.contains(loc) {
+                    img = item
+                    break
+                }
+            }
+            if img == nil {
+                return
+            }
+        
+            leaderAttach = UIAttachmentBehavior(item: img!, attachedToAnchor: loc)
+            leaderAttach?.damping = 0.5
+            animator?.addBehavior(leaderAttach!)
+        } else if pan.state == .changed {
+            leaderAttach?.anchorPoint = loc
+        } else if pan.state == .ended {
+            animator?.removeBehavior(leaderAttach!)
+        }
     }
     
 }
