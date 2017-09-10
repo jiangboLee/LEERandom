@@ -6,8 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="方正综艺_GBK的副本.ttf">
+            <string>FZZYK--GBK1-0</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -38,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="858" y="-544"/>
         </scene>
-        <!--View Controller-->
+        <!--Lot Controller-->
         <scene sceneID="tEQ-3S-ojQ">
             <objects>
-                <viewController id="VGz-t0-PHF" sceneMemberID="viewController">
+                <viewController id="VGz-t0-PHF" customClass="LEELotController" customModule="LEERandom" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YrP-3K-mNg"/>
                         <viewControllerLayoutGuide type="bottom" id="YD3-Jl-02R"/>
@@ -49,19 +56,165 @@
                     <view key="view" contentMode="scaleToFill" id="YnX-jc-Nxu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="FXn-ii-ZyE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signboard" translatesAutoresizingMaskIntoConstraints="NO" id="7TT-XJ-VHA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="3Vq-xQ-vjj"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpK-99-xKb" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                                <rect key="frame" x="25" y="6" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="SHN-E1-c6W"/>
+                                    <constraint firstAttribute="height" constant="48" id="az2-vz-o8e"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <state key="highlighted" image="back"/>
+                                <connections>
+                                    <action selector="popAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="Swj-Fa-Nm2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW4-ch-9nK" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                                <rect key="frame" x="302" y="6" width="48" height="48"/>
+                                <state key="normal" image="quchong"/>
+                                <state key="selected" image="quchong-selected"/>
+                                <state key="highlighted" image="quchong"/>
+                                <connections>
+                                    <action selector="removeSameAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="x9X-qv-mVJ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="switch-bottom" translatesAutoresizingMaskIntoConstraints="NO" id="ned-5X-FPF">
+                                <rect key="frame" x="109.5" y="11.5" width="157" height="37"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="switch" translatesAutoresizingMaskIntoConstraints="NO" id="5Tl-Bh-GRN">
+                                <rect key="frame" x="112.5" y="13" width="81" height="36"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="machineball" translatesAutoresizingMaskIntoConstraints="NO" id="A3M-SB-Mmc">
+                                <rect key="frame" x="41" y="107" width="293" height="468"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKj-cz-MtG" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                                <rect key="frame" x="201" y="585" width="148" height="57"/>
+                                <state key="normal" image="start"/>
+                                <state key="highlighted" image="start"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置数值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCO-DB-fpj">
+                                <rect key="frame" x="60.5" y="571.5" width="56" height="16.5"/>
+                                <fontDescription key="fontDescription" name="FZZYK--GBK1-0" family="FZZongYi-M05" pointSize="14"/>
+                                <color key="textColor" red="0.55686274509803924" green="0.22745098039215686" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="LEE_shadowColor">
+                                        <color key="value" red="0.3411764705882353" green="0.11372549019607843" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="LEE_shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="LEE_shadowRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingvalue-bg" translatesAutoresizingMaskIntoConstraints="NO" id="zYa-fn-JKY">
+                                <rect key="frame" x="29" y="596" width="119" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="VQH-8L-agd"/>
+                                    <constraint firstAttribute="height" constant="34" id="gpg-hc-lIL"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqR-S9-7So" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                                <rect key="frame" x="24" y="594" width="39" height="39"/>
+                                <state key="normal" image="subtract"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aM-ue-UsN" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                                <rect key="frame" x="114" y="594" width="39" height="39"/>
+                                <state key="normal" image="add"/>
+                                <state key="highlighted" image="add"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFN-iV-h0s">
+                                <rect key="frame" x="111.5" y="16" width="77.5" height="30"/>
+                                <fontDescription key="fontDescription" name="FZZYK--GBK1-0" family="FZZongYi-M05" pointSize="15"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="抽球球"/>
+                                <state key="selected" title="抽球球">
+                                    <color key="titleColor" red="0.094117647058823528" green="0.18431372549019609" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="switch"/>
+                                <connections>
+                                    <action selector="switchButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="1hv-q2-ly4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="022-hJ-3uD">
+                                <rect key="frame" x="182.5" y="16" width="86" height="30"/>
+                                <fontDescription key="fontDescription" name="FZZYK--GBK1-0" family="FZZongYi-M05" pointSize="15"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="翻卡片"/>
+                                <state key="selected" title="翻卡片">
+                                    <color key="titleColor" red="0.094117647058823528" green="0.18431372549019609" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="switch"/>
+                                <connections>
+                                    <action selector="switchButton2Action:" destination="VGz-t0-PHF" eventType="touchUpInside" id="sws-yU-gDc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cqR-S9-7So" firstAttribute="leading" secondItem="YnX-jc-Nxu" secondAttribute="leadingMargin" constant="8" id="1ag-Tl-8tG"/>
+                            <constraint firstAttribute="trailing" secondItem="FXn-ii-ZyE" secondAttribute="trailing" id="4Y6-ET-9lD"/>
+                            <constraint firstItem="A3M-SB-Mmc" firstAttribute="top" secondItem="7TT-XJ-VHA" secondAttribute="bottom" constant="38" id="6Hv-Fd-8Ae"/>
+                            <constraint firstItem="fpK-99-xKb" firstAttribute="top" secondItem="YrP-3K-mNg" secondAttribute="bottom" constant="6" id="8ai-J3-46K"/>
+                            <constraint firstItem="7TT-XJ-VHA" firstAttribute="leading" secondItem="YnX-jc-Nxu" secondAttribute="leading" id="Ctm-d1-2l4"/>
+                            <constraint firstAttribute="bottom" secondItem="hKj-cz-MtG" secondAttribute="bottom" constant="25" id="EM7-y3-XIx"/>
+                            <constraint firstItem="GFN-iV-h0s" firstAttribute="leading" secondItem="ned-5X-FPF" secondAttribute="leading" constant="2" id="G0Q-7L-kmA"/>
+                            <constraint firstItem="GFN-iV-h0s" firstAttribute="centerY" secondItem="ned-5X-FPF" secondAttribute="centerY" constant="1" id="GAj-b4-XKZ"/>
+                            <constraint firstItem="ned-5X-FPF" firstAttribute="centerX" secondItem="YnX-jc-Nxu" secondAttribute="centerX" id="Gs5-de-wbx"/>
+                            <constraint firstAttribute="trailing" secondItem="hKj-cz-MtG" secondAttribute="trailing" constant="26" id="HIX-2D-ZDJ"/>
+                            <constraint firstItem="GFN-iV-h0s" firstAttribute="centerX" secondItem="ned-5X-FPF" secondAttribute="centerX" multiplier="0.8" id="HMb-jZ-IUa"/>
+                            <constraint firstItem="zYa-fn-JKY" firstAttribute="leading" secondItem="cqR-S9-7So" secondAttribute="leading" constant="5" id="KJR-ee-cqL"/>
+                            <constraint firstItem="FXn-ii-ZyE" firstAttribute="top" secondItem="YnX-jc-Nxu" secondAttribute="top" id="Qgb-mC-C0I"/>
+                            <constraint firstItem="022-hJ-3uD" firstAttribute="centerX" secondItem="ned-5X-FPF" secondAttribute="centerX" multiplier="1.2" id="Tlv-Dk-0rW"/>
+                            <constraint firstItem="7TT-XJ-VHA" firstAttribute="top" secondItem="YnX-jc-Nxu" secondAttribute="top" id="X8Z-MX-Y8o"/>
+                            <constraint firstItem="zYa-fn-JKY" firstAttribute="centerX" secondItem="jCO-DB-fpj" secondAttribute="centerX" id="Y3u-2o-sUT"/>
+                            <constraint firstAttribute="trailing" secondItem="7TT-XJ-VHA" secondAttribute="trailing" id="YGv-lk-2hl"/>
+                            <constraint firstItem="5Tl-Bh-GRN" firstAttribute="centerY" secondItem="ned-5X-FPF" secondAttribute="centerY" constant="1" id="Yn8-wZ-Ojp"/>
+                            <constraint firstItem="ned-5X-FPF" firstAttribute="centerY" secondItem="fpK-99-xKb" secondAttribute="centerY" id="ZBh-Eh-iUD"/>
+                            <constraint firstItem="022-hJ-3uD" firstAttribute="centerY" secondItem="GFN-iV-h0s" secondAttribute="centerY" id="d2n-jd-orl"/>
+                            <constraint firstItem="zYa-fn-JKY" firstAttribute="top" secondItem="jCO-DB-fpj" secondAttribute="bottom" constant="8" id="ert-T9-PtN"/>
+                            <constraint firstItem="MW4-ch-9nK" firstAttribute="centerY" secondItem="fpK-99-xKb" secondAttribute="centerY" id="hPa-dK-EOY"/>
+                            <constraint firstItem="3aM-ue-UsN" firstAttribute="trailing" secondItem="zYa-fn-JKY" secondAttribute="trailing" constant="5" id="hXc-52-w6x"/>
+                            <constraint firstItem="FXn-ii-ZyE" firstAttribute="leading" secondItem="YnX-jc-Nxu" secondAttribute="leading" id="hpq-de-EAl"/>
+                            <constraint firstItem="5Tl-Bh-GRN" firstAttribute="leading" secondItem="ned-5X-FPF" secondAttribute="leading" constant="3" id="iEA-u6-huL"/>
+                            <constraint firstAttribute="bottom" secondItem="FXn-ii-ZyE" secondAttribute="bottom" id="jKR-Id-ABI"/>
+                            <constraint firstItem="zYa-fn-JKY" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="k62-Bx-bxX"/>
+                            <constraint firstItem="hKj-cz-MtG" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="kb8-aH-Gy1"/>
+                            <constraint firstItem="A3M-SB-Mmc" firstAttribute="centerX" secondItem="YnX-jc-Nxu" secondAttribute="centerX" id="kxb-NW-Emu"/>
+                            <constraint firstAttribute="trailing" secondItem="MW4-ch-9nK" secondAttribute="trailing" constant="25" id="qSb-CR-U35"/>
+                            <constraint firstItem="fpK-99-xKb" firstAttribute="leading" secondItem="YnX-jc-Nxu" secondAttribute="leading" constant="25" id="qy7-q4-EQU"/>
+                            <constraint firstItem="022-hJ-3uD" firstAttribute="trailing" secondItem="ned-5X-FPF" secondAttribute="trailing" constant="2" id="uen-I8-SZM"/>
+                            <constraint firstItem="3aM-ue-UsN" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="xwO-6g-MO1"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="switchBackgroundImage" destination="5Tl-Bh-GRN" id="hqC-MW-YIz"/>
+                        <outlet property="switchButton1" destination="GFN-iV-h0s" id="orN-6D-PK0"/>
+                        <outlet property="switchButton2" destination="022-hJ-3uD" id="bfE-hS-Mmk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Tx-fG-gjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="-545"/>
+            <point key="canvasLocation" x="1592.8" y="-545.57721139430294"/>
         </scene>
         <!--Nav Controller-->
         <scene sceneID="dli-nu-sxF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="JzU-dK-ik3" customClass="LEENavController" customModule="LEERandom" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FSK-3Q-Yyz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FSK-3Q-Yyz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -75,4 +228,18 @@
             <point key="canvasLocation" x="120.8" y="-543.77811094452773"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="39" height="39"/>
+        <image name="back" width="48" height="48"/>
+        <image name="bg" width="375" height="667"/>
+        <image name="machineball" width="293" height="468"/>
+        <image name="quchong" width="48" height="48"/>
+        <image name="quchong-selected" width="48" height="48"/>
+        <image name="settingvalue-bg" width="119" height="34"/>
+        <image name="signboard" width="375" height="69"/>
+        <image name="start" width="148" height="57"/>
+        <image name="subtract" width="39" height="39"/>
+        <image name="switch" width="81" height="36"/>
+        <image name="switch-bottom" width="157" height="37"/>
+    </resources>
 </document>

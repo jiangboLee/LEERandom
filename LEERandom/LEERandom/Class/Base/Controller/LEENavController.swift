@@ -15,7 +15,4 @@ class LEENavController: UINavigationController, UINavigationControllerDelegate {
 
         interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate;
     }
-    
-
-
 }
