@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class LEELotController: ViewController {
 
@@ -16,6 +17,20 @@ class LEELotController: ViewController {
     
     @IBOutlet weak var switchBackgroundImage: UIImageView!
     
+    @IBOutlet weak var ballCount: UIButton!
+    
+    @IBOutlet weak var machineBallImage: UIImageView!
+    
+    @IBOutlet weak var addBallView: UIView!
+    
+    private var isMachineImage: Bool = false
+    
+    fileprivate var animator: UIDynamicAnimator?
+    fileprivate var gravity: UIGravityBehavior?
+    fileprivate var collision: UICollisionBehavior?
+    fileprivate var dynamicItemBehavior: UIDynamicItemBehavior?
+    fileprivate var balls: Array<UIImageView>?
+    fileprivate var motionManger: CMMotionManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,4 +92,91 @@ class LEELotController: ViewController {
             sender.setImage(#imageLiteral(resourceName: "quchong"), for: UIControlState.highlighted )
         }
     }
+    
+    @IBAction func ballCountButtonAction(_ sender: UIButton) {
+        
+        
+    }
+    //MARK: 加球，减球
+    @IBAction func subtractButtonAction(_ sender: UIButton) {
+        var count: Int = Int((ballCount.titleLabel?.text)!)!
+        count -= 1
+        if count < 0 {
+            count = 0
+        }
+        ballCount.setTitle("\(count)", for: .normal)
+    }
+    @IBAction func addButtonAction(_ sender: HighlightButton) {
+        var count: Int = Int((ballCount.titleLabel?.text)!)!
+        count += 1
+        ballCount.setTitle("\(count)", for: .normal)
+        
+        if !isMachineImage {
+            isMachineImage = true
+            machineBallImage.image = #imageLiteral(resourceName: "machine")
+            setDynamicAnimator()
+        }
+        addBall(count: count)
+    }
+    
+    deinit {
+        motionManger.stopDeviceMotionUpdates()
+    }
+}
+
+extension LEELotController {
+
+    
+    
+    fileprivate func setDynamicAnimator() {
+        
+        animator = UIDynamicAnimator(referenceView: addBallView)
+        //重力
+        gravity = UIGravityBehavior(items: [])
+        animator?.addBehavior(gravity!)
+        //碰撞
+        collision = UICollisionBehavior(items: [])
+        let path = UIBezierPath(ovalIn: addBallView.bounds)
+        collision?.addBoundary(withIdentifier: "circle" as NSCopying, for: path)
+        collision?.translatesReferenceBoundsIntoBoundary = true
+        animator?.addBehavior(collision!)
+        //弹性
+        dynamicItemBehavior = UIDynamicItemBehavior(items: [])
+        dynamicItemBehavior?.allowsRotation = true
+        dynamicItemBehavior?.elasticity = 0.7 //弹性
+        animator?.addBehavior(dynamicItemBehavior!)
+        
+        motionManger = CMMotionManager()
+        motionManger.deviceMotionUpdateInterval = 0.01
+        motionManger.startDeviceMotionUpdates(to: OperationQueue.current!) { [unowned self] (motion, error) in
+//            let yaw = "\(motion?.attitude.yaw)"
+//            let pitch = "\(motion?.attitude.pitch)"
+//            let roll = "\(motion?.attitude.roll)"
+            let rotation = atan2(motion!.attitude.pitch, motion!.attitude.roll)
+            self.gravity?.angle = CGFloat(rotation)
+        }
+    }
+    
+    fileprivate func addBall(count: Int) {
+        
+        let ballImage: UIImageView
+        if #available(iOS 9.0, *) {
+            ballImage = LEECircleImage()
+        } else {
+            ballImage = UIImageView()
+        }
+        ballImage.image = UIImage(named: "ball\(count % 5)")
+        ballImage.layer.cornerRadius = 24.5
+        ballImage.layer.masksToBounds = true
+        
+        ballImage.frame = CGRect(x: addBallView.LEE_Width / 2.0 - 15.0 + CGFloat(arc4random_uniform(18)), y: 5, width: 49, height: 49)
+        
+        addBallView.addSubview(ballImage)
+        balls?.append(ballImage)
+        
+        gravity?.addItem(ballImage)
+        collision?.addItem(ballImage)
+        dynamicItemBehavior?.addItem(ballImage)
+    }
+    
 }

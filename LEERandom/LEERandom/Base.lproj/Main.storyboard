@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -96,6 +97,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="machineball" translatesAutoresizingMaskIntoConstraints="NO" id="A3M-SB-Mmc">
                                 <rect key="frame" x="41" y="107" width="293" height="468"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPf-21-9W9">
+                                <rect key="frame" x="46" y="119" width="283" height="283"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yPf-21-9W9" secondAttribute="height" multiplier="1:1" id="0M5-OP-jGH"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="LEE_CornerRadius">
+                                        <real key="value" value="127"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="机器" translatesAutoresizingMaskIntoConstraints="NO" id="9WA-Lm-U2C">
+                                <rect key="frame" x="41" y="107" width="293" height="299"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKj-cz-MtG" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
                                 <rect key="frame" x="201" y="585" width="148" height="57"/>
                                 <state key="normal" image="start"/>
@@ -125,14 +141,13 @@
                                     <constraint firstAttribute="height" constant="34" id="gpg-hc-lIL"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqR-S9-7So" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                                <rect key="frame" x="24" y="594" width="39" height="39"/>
-                                <state key="normal" image="subtract"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aM-ue-UsN" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
                                 <rect key="frame" x="114" y="594" width="39" height="39"/>
                                 <state key="normal" image="add"/>
                                 <state key="highlighted" image="add"/>
+                                <connections>
+                                    <action selector="addButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="ABJ-Ap-UnH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFN-iV-h0s">
                                 <rect key="frame" x="111.5" y="16" width="77.5" height="30"/>
@@ -160,13 +175,34 @@
                                     <action selector="switchButton2Action:" destination="VGz-t0-PHF" eventType="touchUpInside" id="sws-yU-gDc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWy-0r-vRg">
+                                <rect key="frame" x="73" y="594" width="30" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" red="1" green="0.78823529411764703" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ballCountButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="4Qn-Rh-VIg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqR-S9-7So" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                                <rect key="frame" x="24" y="594" width="39" height="39"/>
+                                <state key="normal" image="subtract"/>
+                                <state key="highlighted" image="subtract"/>
+                                <connections>
+                                    <action selector="subtractButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="RLl-TC-s86"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cqR-S9-7So" firstAttribute="leading" secondItem="YnX-jc-Nxu" secondAttribute="leadingMargin" constant="8" id="1ag-Tl-8tG"/>
+                            <constraint firstItem="yPf-21-9W9" firstAttribute="leading" secondItem="A3M-SB-Mmc" secondAttribute="leading" constant="5" id="2pt-HU-a4J"/>
                             <constraint firstAttribute="trailing" secondItem="FXn-ii-ZyE" secondAttribute="trailing" id="4Y6-ET-9lD"/>
+                            <constraint firstItem="9WA-Lm-U2C" firstAttribute="top" secondItem="A3M-SB-Mmc" secondAttribute="top" id="4na-O3-S7m"/>
                             <constraint firstItem="A3M-SB-Mmc" firstAttribute="top" secondItem="7TT-XJ-VHA" secondAttribute="bottom" constant="38" id="6Hv-Fd-8Ae"/>
                             <constraint firstItem="fpK-99-xKb" firstAttribute="top" secondItem="YrP-3K-mNg" secondAttribute="bottom" constant="6" id="8ai-J3-46K"/>
+                            <constraint firstItem="yPf-21-9W9" firstAttribute="top" secondItem="A3M-SB-Mmc" secondAttribute="top" constant="12" id="8s5-Fy-08T"/>
                             <constraint firstItem="7TT-XJ-VHA" firstAttribute="leading" secondItem="YnX-jc-Nxu" secondAttribute="leading" id="Ctm-d1-2l4"/>
                             <constraint firstAttribute="bottom" secondItem="hKj-cz-MtG" secondAttribute="bottom" constant="25" id="EM7-y3-XIx"/>
                             <constraint firstItem="GFN-iV-h0s" firstAttribute="leading" secondItem="ned-5X-FPF" secondAttribute="leading" constant="2" id="G0Q-7L-kmA"/>
@@ -176,7 +212,10 @@
                             <constraint firstItem="GFN-iV-h0s" firstAttribute="centerX" secondItem="ned-5X-FPF" secondAttribute="centerX" multiplier="0.8" id="HMb-jZ-IUa"/>
                             <constraint firstItem="zYa-fn-JKY" firstAttribute="leading" secondItem="cqR-S9-7So" secondAttribute="leading" constant="5" id="KJR-ee-cqL"/>
                             <constraint firstItem="FXn-ii-ZyE" firstAttribute="top" secondItem="YnX-jc-Nxu" secondAttribute="top" id="Qgb-mC-C0I"/>
+                            <constraint firstItem="yPf-21-9W9" firstAttribute="trailing" secondItem="A3M-SB-Mmc" secondAttribute="trailing" constant="-5" id="Rul-SW-Sz1"/>
                             <constraint firstItem="022-hJ-3uD" firstAttribute="centerX" secondItem="ned-5X-FPF" secondAttribute="centerX" multiplier="1.2" id="Tlv-Dk-0rW"/>
+                            <constraint firstItem="kWy-0r-vRg" firstAttribute="centerX" secondItem="jCO-DB-fpj" secondAttribute="centerX" id="Ua0-k8-H3d"/>
+                            <constraint firstItem="9WA-Lm-U2C" firstAttribute="leading" secondItem="A3M-SB-Mmc" secondAttribute="leading" id="Wzp-cg-EWp"/>
                             <constraint firstItem="7TT-XJ-VHA" firstAttribute="top" secondItem="YnX-jc-Nxu" secondAttribute="top" id="X8Z-MX-Y8o"/>
                             <constraint firstItem="zYa-fn-JKY" firstAttribute="centerX" secondItem="jCO-DB-fpj" secondAttribute="centerX" id="Y3u-2o-sUT"/>
                             <constraint firstAttribute="trailing" secondItem="7TT-XJ-VHA" secondAttribute="trailing" id="YGv-lk-2hl"/>
@@ -192,14 +231,19 @@
                             <constraint firstItem="zYa-fn-JKY" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="k62-Bx-bxX"/>
                             <constraint firstItem="hKj-cz-MtG" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="kb8-aH-Gy1"/>
                             <constraint firstItem="A3M-SB-Mmc" firstAttribute="centerX" secondItem="YnX-jc-Nxu" secondAttribute="centerX" id="kxb-NW-Emu"/>
+                            <constraint firstItem="9WA-Lm-U2C" firstAttribute="trailing" secondItem="A3M-SB-Mmc" secondAttribute="trailing" id="mSC-Ab-7RY"/>
                             <constraint firstAttribute="trailing" secondItem="MW4-ch-9nK" secondAttribute="trailing" constant="25" id="qSb-CR-U35"/>
                             <constraint firstItem="fpK-99-xKb" firstAttribute="leading" secondItem="YnX-jc-Nxu" secondAttribute="leading" constant="25" id="qy7-q4-EQU"/>
+                            <constraint firstItem="kWy-0r-vRg" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="rIv-Vd-Ah3"/>
                             <constraint firstItem="022-hJ-3uD" firstAttribute="trailing" secondItem="ned-5X-FPF" secondAttribute="trailing" constant="2" id="uen-I8-SZM"/>
                             <constraint firstItem="3aM-ue-UsN" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="xwO-6g-MO1"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="addBallView" destination="yPf-21-9W9" id="Pwz-pC-iPf"/>
+                        <outlet property="ballCount" destination="kWy-0r-vRg" id="IMS-xi-y7T"/>
+                        <outlet property="machineBallImage" destination="A3M-SB-Mmc" id="Q7P-i6-Dwp"/>
                         <outlet property="switchBackgroundImage" destination="5Tl-Bh-GRN" id="hqC-MW-YIz"/>
                         <outlet property="switchButton1" destination="GFN-iV-h0s" id="orN-6D-PK0"/>
                         <outlet property="switchButton2" destination="022-hJ-3uD" id="bfE-hS-Mmk"/>
@@ -241,5 +285,6 @@
         <image name="subtract" width="39" height="39"/>
         <image name="switch" width="81" height="36"/>
         <image name="switch-bottom" width="157" height="37"/>
+        <image name="机器" width="288" height="299"/>
     </resources>
 </document>

@@ -51,6 +51,7 @@
 		B7C0369F1F651C610032311C /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0369E1F651C610032311C /* HighlightButton.swift */; };
 		B7C036A11F6526350032311C /* 方正综艺_GBK的副本.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7C036A01F6526350032311C /* 方正综艺_GBK的副本.ttf */; };
 		B7D6B8F81F6541C900FB20C8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8F71F6541C900FB20C8 /* UIView+Extension.swift */; };
+		B7D6B8FA1F65769800FB20C8 /* LEECircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8F91F65769800FB20C8 /* LEECircleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		B7C0369E1F651C610032311C /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		B7C036A01F6526350032311C /* 方正综艺_GBK的副本.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正综艺_GBK的副本.ttf"; sourceTree = "<group>"; };
 		B7D6B8F71F6541C900FB20C8 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B7D6B8F91F65769800FB20C8 /* LEECircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEECircleImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 		B7C0364C1F6425640032311C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B7D6B8F91F65769800FB20C8 /* LEECircleImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				B7C036801F6429A40032311C /* ConstraintDSL.swift in Sources */,
 				B7C036951F6429A40032311C /* ConstraintView+Extensions.swift in Sources */,
 				B7C036881F6429A40032311C /* ConstraintLayoutSupportDSL.swift in Sources */,
+				B7D6B8FA1F65769800FB20C8 /* LEECircleImage.swift in Sources */,
 				B7C036961F6429A40032311C /* ConstraintView.swift in Sources */,
 				B7C036811F6429A40032311C /* ConstraintInsets.swift in Sources */,
 				B7C036931F6429A40032311C /* ConstraintRelatableTarget.swift in Sources */,
@@ -545,6 +549,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GGP5472W8N;
 				INFOPLIST_FILE = LEERandom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.lijiangbo.LEERandom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,6 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GGP5472W8N;
 				INFOPLIST_FILE = LEERandom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.lijiangbo.LEERandom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
