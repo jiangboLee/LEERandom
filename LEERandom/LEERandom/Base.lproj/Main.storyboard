@@ -127,6 +127,9 @@
                                 </constraints>
                                 <state key="normal" image="start"/>
                                 <state key="highlighted" image="start"/>
+                                <connections>
+                                    <action selector="staetButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="Mlb-gB-333"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置数值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCO-DB-fpj">
                                 <rect key="frame" x="60.5" y="571.5" width="56" height="16.5"/>

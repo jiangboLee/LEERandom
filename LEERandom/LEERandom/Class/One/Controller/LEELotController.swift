@@ -46,13 +46,15 @@ class LEELotController: ViewController {
     fileprivate var balls: Array<UIImageView> = Array()
     fileprivate var motionManger: CMMotionManager!
     
+    fileprivate var timer: Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         machineWidth.constant = widthSize * 293.0
         machineHeight.constant = widthSize * 468.0
         if ISIPHONE_SE() {
-           machineTop.constant = 20.0
+            machineTop.constant = 20.0
             setValueLable.font
              = UIFont.systemFont(ofSize: 11)
         } else {
@@ -67,7 +69,10 @@ class LEELotController: ViewController {
         switchButton2.isSelected = true
         switchButton2.isUserInteractionEnabled = true
         
-        
+        timer = Timer(timeInterval: 0.05, target: self, selector: #selector(startBallRoll), userInfo: nil, repeats: true)
+        timer.fireDate = NSDate.distantFuture
+        RunLoop.current.add(timer, forMode: .commonModes)
+    
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -133,6 +138,22 @@ class LEELotController: ViewController {
             count = 0
         }
         ballCount.setTitle("\(count)", for: .normal)
+        if balls.count > 0 {
+            
+            UIView.animate(withDuration: 0.3, animations: { 
+                
+                self.balls[0].bounds.size = CGSize.zero;
+                self.balls[0].alpha = 0
+            }, completion: { (finish) in
+                
+                self.balls[0].removeFromSuperview()
+                self.gravity?.removeItem(self.balls[0])
+                self.collision?.removeItem(self.balls[0])
+                self.dynamicItemBehavior?.removeItem(self.balls[0])
+                self.balls.remove(at: 0)
+            })
+        }
+        
     }
     @IBAction func addButtonAction(_ sender: HighlightButton) {
         var count: Int = Int((ballCount.titleLabel?.text)!)!
@@ -146,6 +167,39 @@ class LEELotController: ViewController {
             addGes()
         }
         addBall(count: count)
+        
+        if count > 20 {
+            
+            UIView.animate(withDuration: 0.2, animations: {
+                
+                self.balls[0].bounds.size = CGSize.zero;
+                self.balls[0].alpha = 0
+            }, completion: { (finish) in
+                
+                self.balls[0].removeFromSuperview()
+                self.gravity?.removeItem(self.balls[0])
+                self.collision?.removeItem(self.balls[0])
+                self.dynamicItemBehavior?.removeItem(self.balls[0])
+                self.balls.remove(at: 0)
+            })
+        }
+    }
+    
+    @IBAction func staetButtonAction(_ sender: UIButton) {
+        
+        timer.fireDate = NSDate(timeIntervalSinceNow: 0) as Date
+    }
+    
+    func startBallRoll() {
+        
+        motionManger.startDeviceMotionUpdates(to: OperationQueue.current!) { [unowned self] (motion, error) in
+            
+            let x: CGFloat = CGFloat(arc4random_uniform(30001)) / 10000.0 - 1.5
+            let y: CGFloat = CGFloat(arc4random_uniform(30001)) / 10000.0 - 1.5
+            let rotation = atan2(x, y)
+    
+            self.gravity?.angle = CGFloat(rotation)
+        }
     }
     
     deinit {
@@ -181,8 +235,9 @@ extension LEELotController {
         motionManger.deviceMotionUpdateInterval = 0.01
         motionManger.startDeviceMotionUpdates(to: OperationQueue.current!) { [unowned self] (motion, error) in
 //            let yaw = "\(motion?.attitude.yaw)"
-//            let pitch = "\(motion?.attitude.pitch)"
-//            let roll = "\(motion?.attitude.roll)"
+//            let pitch = "\(String(describing: motion?.attitude.pitch))"
+//            let roll = "\(String(describing: motion?.attitude.roll))"
+//            print(pitch + "===" + roll)
             let rotation = atan2(motion!.attitude.pitch, motion!.attitude.roll)
             self.gravity?.angle = CGFloat(rotation)
         }
@@ -204,10 +259,11 @@ extension LEELotController {
             ballImage = UIImageView()
         }
         ballImage.image = UIImage(named: "ball\(count % 5)")
-        ballImage.layer.cornerRadius = 24.5
-        ballImage.layer.masksToBounds = true
         
-        ballImage.frame = CGRect(x: addBallView.LEE_Width / 2.0 - 15.0 + CGFloat(arc4random_uniform(18)), y: 5, width: 49, height: 49)
+        let ballW = widthSize * 49.0
+        ballImage.frame = CGRect(x: addBallView.LEE_Width / 2.0 - 15.0 + CGFloat(arc4random_uniform(18)), y: 5, width: ballW, height: ballW)
+        ballImage.layer.cornerRadius = ballW / 2.0
+        ballImage.layer.masksToBounds = true
         
         addBallView.addSubview(ballImage)
         balls.append(ballImage)
