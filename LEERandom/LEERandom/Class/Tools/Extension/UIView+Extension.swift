@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 extension UIView {
 
     public var LEE_X: CGFloat {

@@ -23,6 +23,19 @@ class LEELotController: ViewController {
     
     @IBOutlet weak var addBallView: UIView!
     
+    //尺寸适配
+    @IBOutlet weak var machineHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var machineWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var machineTop: NSLayoutConstraint!
+    
+    @IBOutlet weak var startButtonWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var startButtonBottom: NSLayoutConstraint!
+    
+    @IBOutlet weak var setValueLable: UILabel!
+    
     private var isMachineImage: Bool = false
     
     fileprivate var animator: UIDynamicAnimator?
@@ -35,6 +48,20 @@ class LEELotController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        machineWidth.constant = widthSize * 293.0
+        machineHeight.constant = widthSize * 468.0
+        if ISIPHONE_SE() {
+           machineTop.constant = 20.0
+            setValueLable.font
+             = UIFont.systemFont(ofSize: 11)
+        } else {
+            machineTop.constant = widthSize * 38.0
+            setValueLable.font
+                = UIFont.systemFont(ofSize: 14)
+        }
+        startButtonWidth.constant = widthSize * 148.0
+        startButtonBottom.constant = widthSize * 25.0
         
         switchButton1.isUserInteractionEnabled = false
         switchButton2.isSelected = true
@@ -122,7 +149,9 @@ class LEELotController: ViewController {
     }
     
     deinit {
-        motionManger.stopDeviceMotionUpdates()
+        if (motionManger != nil) {
+            motionManger.stopDeviceMotionUpdates()
+        }
     }
 }
 

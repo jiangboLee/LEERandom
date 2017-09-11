@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JzU-dK-ik3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JzU-dK-ik3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -96,6 +96,10 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="machineball" translatesAutoresizingMaskIntoConstraints="NO" id="A3M-SB-Mmc">
                                 <rect key="frame" x="41" y="107" width="293" height="468"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="468" id="Fy9-Cx-fsg"/>
+                                    <constraint firstAttribute="width" constant="293" id="y9T-44-NU6"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPf-21-9W9">
                                 <rect key="frame" x="46" y="119" width="283" height="283"/>
@@ -105,15 +109,22 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="LEE_CornerRadius">
-                                        <real key="value" value="127"/>
+                                        <real key="value" value="141.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="机器" translatesAutoresizingMaskIntoConstraints="NO" id="9WA-Lm-U2C">
                                 <rect key="frame" x="41" y="107" width="293" height="299"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9WA-Lm-U2C" secondAttribute="height" multiplier="293:299" id="Sd6-Lt-UQa"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKj-cz-MtG" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKj-cz-MtG" userLabel="start" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
                                 <rect key="frame" x="201" y="585" width="148" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="6Ub-P6-3AF"/>
+                                    <constraint firstAttribute="width" secondItem="hKj-cz-MtG" secondAttribute="height" multiplier="148:57" id="HO2-x6-hU4"/>
+                                </constraints>
                                 <state key="normal" image="start"/>
                                 <state key="highlighted" image="start"/>
                             </button>
@@ -244,6 +255,12 @@
                         <outlet property="addBallView" destination="yPf-21-9W9" id="Pwz-pC-iPf"/>
                         <outlet property="ballCount" destination="kWy-0r-vRg" id="IMS-xi-y7T"/>
                         <outlet property="machineBallImage" destination="A3M-SB-Mmc" id="Q7P-i6-Dwp"/>
+                        <outlet property="machineHeight" destination="Fy9-Cx-fsg" id="UgW-EG-Bfa"/>
+                        <outlet property="machineTop" destination="6Hv-Fd-8Ae" id="2n7-OY-yyB"/>
+                        <outlet property="machineWidth" destination="y9T-44-NU6" id="bvc-Oj-sSB"/>
+                        <outlet property="setValueLable" destination="jCO-DB-fpj" id="9yI-1t-WAL"/>
+                        <outlet property="startButtonBottom" destination="EM7-y3-XIx" id="LWh-Ad-Bc0"/>
+                        <outlet property="startButtonWidth" destination="6Ub-P6-3AF" id="lQG-Kx-wkg"/>
                         <outlet property="switchBackgroundImage" destination="5Tl-Bh-GRN" id="hqC-MW-YIz"/>
                         <outlet property="switchButton1" destination="GFN-iV-h0s" id="orN-6D-PK0"/>
                         <outlet property="switchButton2" destination="022-hJ-3uD" id="bfE-hS-Mmk"/>
@@ -258,7 +275,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="JzU-dK-ik3" customClass="LEENavController" customModule="LEERandom" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FSK-3Q-Yyz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FSK-3Q-Yyz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

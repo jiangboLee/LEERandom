@@ -52,6 +52,7 @@
 		B7C036A11F6526350032311C /* 方正综艺_GBK的副本.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7C036A01F6526350032311C /* 方正综艺_GBK的副本.ttf */; };
 		B7D6B8F81F6541C900FB20C8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8F71F6541C900FB20C8 /* UIView+Extension.swift */; };
 		B7D6B8FA1F65769800FB20C8 /* LEECircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8F91F65769800FB20C8 /* LEECircleImage.swift */; };
+		B7D6B8FC1F66C29500FB20C8 /* LEEConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8FB1F66C29500FB20C8 /* LEEConfigure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		B7C036A01F6526350032311C /* 方正综艺_GBK的副本.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正综艺_GBK的副本.ttf"; sourceTree = "<group>"; };
 		B7D6B8F71F6541C900FB20C8 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B7D6B8F91F65769800FB20C8 /* LEECircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEECircleImage.swift; sourceTree = "<group>"; };
+		B7D6B8FB1F66C29500FB20C8 /* LEEConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEEConfigure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 				B7C036A01F6526350032311C /* 方正综艺_GBK的副本.ttf */,
 				B7923E7B1F6033BF00F671B9 /* LaunchScreen.storyboard */,
 				B7923E7E1F6033BF00F671B9 /* Info.plist */,
+				B7D6B8FB1F66C29500FB20C8 /* LEEConfigure.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				B7C036841F6429A40032311C /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				B7C0368B1F6429A40032311C /* ConstraintMakerExtendable.swift in Sources */,
 				B7C036861F6429A40032311C /* ConstraintLayoutGuideDSL.swift in Sources */,
+				B7D6B8FC1F66C29500FB20C8 /* LEEConfigure.swift in Sources */,
 				B7C0367E1F6429A40032311C /* ConstraintConstantTarget.swift in Sources */,
 				B7C0367F1F6429A40032311C /* ConstraintDescription.swift in Sources */,
 				B7C0369C1F6429A40032311C /* UILayoutSupport+Extensions.swift in Sources */,
