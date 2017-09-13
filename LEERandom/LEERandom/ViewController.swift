@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         button2Width.constant = widthSize * 141;
     }
 
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get {
+            return .lightContent
+        }
+    }
 }
 
