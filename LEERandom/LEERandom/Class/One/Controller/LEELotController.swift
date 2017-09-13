@@ -9,7 +9,7 @@
 import UIKit
 import CoreMotion
 
-class LEELotController: ViewController {
+class LEELotController: UIViewController {
 
     @IBOutlet weak var switchButton1: UIButton!
     
@@ -69,7 +69,7 @@ class LEELotController: ViewController {
         switchButton2.isSelected = true
         switchButton2.isUserInteractionEnabled = true
         
-        timer = Timer(timeInterval: 0.05, target: self, selector: #selector(startBallRoll), userInfo: nil, repeats: true)
+        timer = Timer(timeInterval: 0.2, target: self, selector: #selector(startBallRoll), userInfo: nil, repeats: true)
         timer.fireDate = NSDate.distantFuture
         RunLoop.current.add(timer, forMode: .commonModes)
     
@@ -187,20 +187,32 @@ class LEELotController: ViewController {
     
     @IBAction func staetButtonAction(_ sender: UIButton) {
         
-        timer.fireDate = NSDate(timeIntervalSinceNow: 0) as Date
+//        timer.fireDate = NSDate(timeIntervalSinceNow: 0) as Date
+        startBallRoll()
     }
     
     func startBallRoll() {
         
-        motionManger.startDeviceMotionUpdates(to: OperationQueue.current!) { [unowned self] (motion, error) in
-            
-            let x: CGFloat = CGFloat(arc4random_uniform(30001)) / 10000.0 - 1.5
-            let y: CGFloat = CGFloat(arc4random_uniform(30001)) / 10000.0 - 1.5
-            let rotation = atan2(x, y)
-    
-            self.gravity?.angle = CGFloat(rotation)
-        }
+        
+        let baseAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        baseAnimation.toValue = Double.pi * 10
+        baseAnimation.duration = 2
+        baseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        baseAnimation.isRemovedOnCompletion = false
+        baseAnimation.fillMode = kCAFillModeForwards
+        addBallView.layer .add(baseAnimation, forKey: nil)
+        
+//        motionManger.startDeviceMotionUpdates(to: OperationQueue.current!) { [unowned self] (motion, error) in
+        
+//            let x: CGFloat = CGFloat(arc4random_uniform(30001)) / 10000.0 - 1.5
+//            let y: CGFloat = CGFloat(arc4random_uniform(30001)) / 10000.0 - 1.5
+//            let rotation = atan2(x, y)
+//           
+//            self.gravity?.angle = CGFloat(rotation)
+           
+//        }
     }
+    
     
     deinit {
         if (motionManger != nil) {

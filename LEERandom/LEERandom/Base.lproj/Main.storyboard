@@ -29,18 +29,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlt-ha-D5E">
-                                <rect key="frame" x="146" y="297" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg1" translatesAutoresizingMaskIntoConstraints="NO" id="qWR-mL-Zaq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQO-v6-coN" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                                <rect key="frame" x="117" y="316" width="141" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141" id="WQe-8n-I8A"/>
+                                    <constraint firstAttribute="width" secondItem="ZQO-v6-coN" secondAttribute="height" multiplier="47:18" id="l1m-L9-6ir"/>
+                                </constraints>
+                                <state key="normal" image="icon-fenzu"/>
+                                <state key="highlighted" image="icon-fenzu"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlt-ha-D5E" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                                <rect key="frame" x="116" y="231" width="142" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rlt-ha-D5E" secondAttribute="height" multiplier="142:55" id="O93-Ar-okl"/>
+                                    <constraint firstAttribute="width" constant="142" id="lo0-nw-rcY"/>
+                                </constraints>
+                                <state key="normal" image="icon-zhuajiu"/>
+                                <state key="highlighted" image="icon-zhuajiu"/>
                                 <connections>
                                     <segue destination="VGz-t0-PHF" kind="show" id="iEb-qb-D4Y"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qWR-mL-Zaq" secondAttribute="trailing" id="3BI-rK-Auy"/>
+                            <constraint firstItem="ZQO-v6-coN" firstAttribute="top" secondItem="rlt-ha-D5E" secondAttribute="bottom" constant="30" id="4cy-8C-3qH"/>
+                            <constraint firstItem="ZQO-v6-coN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eyt-aN-KOy"/>
+                            <constraint firstItem="rlt-ha-D5E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RMs-33-zK6"/>
+                            <constraint firstAttribute="bottom" secondItem="qWR-mL-Zaq" secondAttribute="bottom" id="dcc-r2-Zwj"/>
+                            <constraint firstItem="qWR-mL-Zaq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="g9s-lK-cZW"/>
+                            <constraint firstItem="rlt-ha-D5E" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="231" id="iNY-Sq-z5S"/>
+                            <constraint firstItem="qWR-mL-Zaq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wPK-cE-qno"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4hR-hr-t8m"/>
+                    <connections>
+                        <outlet property="button1Width" destination="lo0-nw-rcY" id="URG-CF-I4b"/>
+                        <outlet property="button2Width" destination="WQe-8n-I8A" id="E2V-kc-1xZ"/>
+                        <outlet property="buttonTop" destination="iNY-Sq-z5S" id="m98-1G-xp2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -296,6 +327,9 @@
         <image name="add" width="39" height="39"/>
         <image name="back" width="48" height="48"/>
         <image name="bg" width="375" height="667"/>
+        <image name="bg1" width="375" height="667"/>
+        <image name="icon-fenzu" width="141" height="54"/>
+        <image name="icon-zhuajiu" width="142" height="55"/>
         <image name="machineball" width="293" height="468"/>
         <image name="quchong" width="48" height="48"/>
         <image name="quchong-selected" width="48" height="48"/>
