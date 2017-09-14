@@ -133,14 +133,10 @@ class LEELotController: UIViewController {
     //MARK: 加球，减球
     @IBAction func subtractButtonAction(_ sender: UIButton) {
         var count: Int = Int((ballCount.titleLabel?.text)!)!
-        count -= 1
-        if count < 0 {
-            count = 0
-        }
-        ballCount.setTitle("\(count)", for: .normal)
-        if balls.count > 0 {
+        
+        if count > 0 && count <= 22 {
             
-            UIView.animate(withDuration: 0.3, animations: { 
+            UIView.animate(withDuration: 0.3, animations: {
                 
                 self.balls[0].bounds.size = CGSize.zero;
                 self.balls[0].alpha = 0
@@ -154,6 +150,11 @@ class LEELotController: UIViewController {
             })
         }
         
+        count -= 1
+        if count < 0 {
+            count = 0
+        }
+        ballCount.setTitle("\(count)", for: .normal)
     }
     @IBAction func addButtonAction(_ sender: HighlightButton) {
         var count: Int = Int((ballCount.titleLabel?.text)!)!
@@ -168,7 +169,7 @@ class LEELotController: UIViewController {
         }
         addBall(count: count)
         
-        if count > 20 {
+        if count > 22 {
             
             UIView.animate(withDuration: 0.2, animations: {
                 
@@ -189,6 +190,24 @@ class LEELotController: UIViewController {
         
 //        timer.fireDate = NSDate(timeIntervalSinceNow: 0) as Date
         startBallRoll()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.9) { 
+            
+            let alertV = UINib(nibName: "LEEEndView", bundle: nil).instantiate(withOwner: nil, options: nil).last as! LEEEndView
+            alertV.frame = self.view.bounds
+            alertV.ballNum = (self.ballCount.titleLabel?.text)!
+            alertV.againBlock = {
+                
+//                for _ in balls {
+//                    
+//                }
+            }
+            alertV.goonBlock = {
+            
+            }
+            
+            self.view.addSubview(alertV)
+        }
     }
     
     func startBallRoll() {
