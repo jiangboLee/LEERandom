@@ -54,6 +54,9 @@ class LEELotController: UIViewController {
     fileprivate var leaveBalls: Int?
     fileprivate var isGoonLeave: Bool = false
     fileprivate var produce: ProduceRandom!
+    fileprivate var donotJianOne: Bool = true
+    fileprivate var donotJianBalls: Int?
+    fileprivate var i: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,30 +136,57 @@ class LEELotController: UIViewController {
             sender.setImage(#imageLiteral(resourceName: "quchong"), for: UIControlState.highlighted )
         }
     }
-    
+    //MARK: 设置球数弹框
     @IBAction func ballCountButtonAction(_ sender: UIButton) {
         
-        sender.isSelected = !sender.isSelected;
+//        sender.isSelected = !sender.isSelected;
+        let inputView = UINib(nibName: "LEEInputView", bundle: nil).instantiate(withOwner: nil, options: nil).last as? LEEInputView
+        inputView?.frame = view.bounds
+        inputView?.bgView.transform = CGAffineTransform(translationX: 0, y: -400)
+        view.addSubview(inputView!)
+        
+        inputView?.sureInputBlock = { str in
+            if self.ballCount.titleLabel?.text != "0" {
+            
+                for _ in 1...Int((self.ballCount.titleLabel?.text)!)! {
+                    self.subtractButtonAction(UIButton())
+                }
+            }
+            for i in 1...Int(str)! {
+                self.i = i
+                self.addButtonAction(UIButton())
+            }
+//            self.ballCount.setTitle(str, for: .normal)
+        }
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 5, initialSpringVelocity: 8, options: .curveEaseInOut, animations: {
+            inputView?.bgView.transform = CGAffineTransform.identity
+        }, completion: nil)
+        
         
     }
     //MARK: 加球，减球
     @IBAction func subtractButtonAction(_ sender: UIButton) {
-        var count: Int = Int((ballCount.titleLabel?.text)!)!
         
+        var count: Int = Int((ballCount.titleLabel?.text)!)!
+
         if count > 0 && count <= 22 {
             
-            UIView.animate(withDuration: 0.3, animations: {
+            if balls.count > 0 {
                 
-                self.balls[0].bounds.size = CGSize.zero;
-                self.balls[0].alpha = 0
-            }, completion: { (finish) in
-                
-                self.balls[0].removeFromSuperview()
-                self.gravity?.removeItem(self.balls[0])
-                self.collision?.removeItem(self.balls[0])
-                self.dynamicItemBehavior?.removeItem(self.balls[0])
-                self.balls.remove(at: 0)
-            })
+                UIView.animate(withDuration: 0.3, animations: {
+                    
+                    self.balls[0].bounds.size = CGSize.zero;
+                    self.balls[0].alpha = 0
+                }, completion: { (finish) in
+                    
+                    self.balls[0].removeFromSuperview()
+                    self.gravity?.removeItem(self.balls[0])
+                    self.collision?.removeItem(self.balls[0])
+                    self.dynamicItemBehavior?.removeItem(self.balls[0])
+                    self.balls.remove(at: 0)
+                })
+            }
         }
         
         count -= 1
@@ -164,20 +194,41 @@ class LEELotController: UIViewController {
             count = 0
         }
         ballCount.setTitle("\(count)", for: .normal)
+        
     }
-    @IBAction func addButtonAction(_ sender: HighlightButton) {
+    func ballHideOne() {
+        if donotJianOne {
+            donotJianBalls = Int((ballCount.titleLabel?.text)!)! - 1
+        }
+        
+        if donotJianBalls! > 0 && donotJianBalls! < 22 {
+            balls[donotJianBalls!].isHidden = true
+        }
+        
+        donotJianBalls! -= 1
+        if donotJianBalls! < 0 {
+            donotJianBalls! = 0
+        }
+
+    }
+    
+
+    
+    @IBAction func addButtonAction(_ sender: UIButton) {
         var count: Int = Int((ballCount.titleLabel?.text)!)!
         count += 1
+    
         ballCount.setTitle("\(count)", for: .normal)
-        
+       
         if !isMachineImage {
             isMachineImage = true
             machineBallImage.image = #imageLiteral(resourceName: "machine")
             setDynamicAnimator()
             addGes()
         }
-        addBall(count: count)
         
+        addBall(count: count)
+
         if count > 22 {
             
             UIView.animate(withDuration: 0.2, animations: {
@@ -199,6 +250,7 @@ class LEELotController: UIViewController {
         
         
         if balls.count == 0 {
+            ballCountButtonAction(UIButton())
             return
         }
         if !isGoonLeave {
@@ -226,10 +278,9 @@ class LEELotController: UIViewController {
                 alertV.ballNum = self.produce.start()
             }
             
-//            alertV.ballNum = (self.ballCount.titleLabel?.text)!
             alertV.againBlock = {
                 self.isGoonLeave = false
-                for _ in self.balls {
+                for _ in 1...Int((self.ballCount.titleLabel?.text)!)! {
                     self.subtractButtonAction(UIButton())
                 }
             }
@@ -242,6 +293,14 @@ class LEELotController: UIViewController {
                     if self.leaveBalls == 0 {
                         self.isGoonLeave = false
                         self.leaveBalls = Int((self.ballCount.titleLabel?.text)!)
+                        
+                        self.donotJianOne = true
+                        for item: UIImageView in self.balls {
+                            item.isHidden = false
+                        }
+                    } else {
+                        self.ballHideOne()
+                        self.donotJianOne = false
                     }
                     self.leaveBalls! -= 1
                 }
@@ -292,11 +351,11 @@ extension LEELotController {
         //弹性
         dynamicItemBehavior = UIDynamicItemBehavior(items: [])
         dynamicItemBehavior?.allowsRotation = true
-        dynamicItemBehavior?.elasticity = 0.7 //弹性
+        dynamicItemBehavior?.elasticity = 0.5 //弹性
         animator?.addBehavior(dynamicItemBehavior!)
         
         motionManger = CMMotionManager()
-        motionManger.deviceMotionUpdateInterval = 0.01
+        motionManger.deviceMotionUpdateInterval = 0.02
         motionManger.startDeviceMotionUpdates(to: OperationQueue.current!) { [unowned self] (motion, error) in
 //            let yaw = "\(motion?.attitude.yaw)"
 //            let pitch = "\(String(describing: motion?.attitude.pitch))"
@@ -325,7 +384,7 @@ extension LEELotController {
         ballImage.image = UIImage(named: "ball\(count % 5)")
         
         let ballW = widthSize * 49.0
-        ballImage.frame = CGRect(x: addBallView.LEE_Width / 2.0 - 15.0 + CGFloat(arc4random_uniform(18)), y: 5, width: ballW, height: ballW)
+        ballImage.frame = CGRect(x: addBallView.LEE_Width / 2.0 , y: 15, width: ballW, height: ballW)
         ballImage.layer.cornerRadius = ballW / 2.0
         ballImage.layer.masksToBounds = true
         
@@ -334,13 +393,14 @@ extension LEELotController {
         
         gravity?.addItem(ballImage)
         collision?.addItem(ballImage)
-        dynamicItemBehavior?.addItem(ballImage)
+        self.dynamicItemBehavior?.addItem(ballImage)
+        
     }
     
     func panAction(pan: UIPanGestureRecognizer) {
         
         let loc = pan.location(in: addBallView)
-        print(loc)
+//        print(loc)
         if pan.state == .began {
             
             var img: UIImageView?

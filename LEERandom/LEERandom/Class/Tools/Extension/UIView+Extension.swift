@@ -50,6 +50,26 @@ extension UIView {
             self.frame = r
         }
     }
+    public var LEE_CenterX: CGFloat {
+        get {
+            return self.center.x
+        }
+        set {
+            var r = self.center
+            r.x = newValue
+            self.center = r
+        }
+    }
+    public var LEE_CenterY: CGFloat {
+        get {
+            return self.center.y
+        }
+        set {
+            var r = self.center
+            r.y = newValue
+            self.center = r
+        }
+    }
     @IBInspectable public var LEE_CornerRadius: CGFloat {
         get {
             return self.layer.cornerRadius

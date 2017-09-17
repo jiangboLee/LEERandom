@@ -11,6 +11,8 @@
 		B7286DF71F6ABAA300A758D3 /* LEEEndView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7286DF61F6ABAA300A758D3 /* LEEEndView.xib */; };
 		B7286DF91F6D729200A758D3 /* ProduceRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7286DF81F6D729200A758D3 /* ProduceRandom.swift */; };
 		B7286DFB1F6E160B00A758D3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7286DFA1F6E160B00A758D3 /* String+Extension.swift */; };
+		B7286DFD1F6E762400A758D3 /* LEEInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7286DFC1F6E762400A758D3 /* LEEInputView.swift */; };
+		B7286DFF1F6E762C00A758D3 /* LEEInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7286DFE1F6E762C00A758D3 /* LEEInputView.xib */; };
 		B7923E731F6033BF00F671B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7923E721F6033BF00F671B9 /* AppDelegate.swift */; };
 		B7923E751F6033BF00F671B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7923E741F6033BF00F671B9 /* ViewController.swift */; };
 		B7923E781F6033BF00F671B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7923E761F6033BF00F671B9 /* Main.storyboard */; };
@@ -64,6 +66,8 @@
 		B7286DF61F6ABAA300A758D3 /* LEEEndView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LEEEndView.xib; sourceTree = "<group>"; };
 		B7286DF81F6D729200A758D3 /* ProduceRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProduceRandom.swift; sourceTree = "<group>"; };
 		B7286DFA1F6E160B00A758D3 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B7286DFC1F6E762400A758D3 /* LEEInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEEInputView.swift; sourceTree = "<group>"; };
+		B7286DFE1F6E762C00A758D3 /* LEEInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LEEInputView.xib; sourceTree = "<group>"; };
 		B7923E6F1F6033BF00F671B9 /* LEERandom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEERandom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7923E721F6033BF00F671B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7923E741F6033BF00F671B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../ViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 				B7D6B8F91F65769800FB20C8 /* LEECircleImage.swift */,
 				B7286DF41F6ABA9B00A758D3 /* LEEEndView.swift */,
 				B7286DF61F6ABAA300A758D3 /* LEEEndView.xib */,
+				B7286DFC1F6E762400A758D3 /* LEEInputView.swift */,
+				B7286DFE1F6E762C00A758D3 /* LEEInputView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				B7286DF71F6ABAA300A758D3 /* LEEEndView.xib in Resources */,
 				B7923E7A1F6033BF00F671B9 /* Assets.xcassets in Resources */,
 				B7923E781F6033BF00F671B9 /* Main.storyboard in Resources */,
+				B7286DFF1F6E762C00A758D3 /* LEEInputView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +415,7 @@
 				B7923E751F6033BF00F671B9 /* ViewController.swift in Sources */,
 				B7C0368C1F6429A40032311C /* ConstraintMakerFinalizable.swift in Sources */,
 				B7C036551F6426C40032311C /* LEELotController.swift in Sources */,
+				B7286DFD1F6E762400A758D3 /* LEEInputView.swift in Sources */,
 				B7C036871F6429A40032311C /* ConstraintLayoutSupport.swift in Sources */,
 				B7C0369B1F6429A40032311C /* LayoutConstraintItem.swift in Sources */,
 				B7286DFB1F6E160B00A758D3 /* String+Extension.swift in Sources */,

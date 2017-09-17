@@ -50,11 +50,6 @@ class LEEEndView: UIView {
     var ballNum: Int? {
         didSet {
             
-//            if removeSame {
-//               chooseNum = produce.noAgainStart()
-//            } else {
-////               chooseNum = produce.start()
-//            }
             numLable.text = String(describing: ballNum!)
         }
     }

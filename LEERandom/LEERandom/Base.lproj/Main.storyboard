@@ -110,6 +110,15 @@
                                     <action selector="popAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="Swj-Fa-Nm2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW4-ch-9nK" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                                <rect key="frame" x="302" y="6" width="48" height="48"/>
+                                <state key="normal" image="quchong"/>
+                                <state key="selected" image="quchong-selected"/>
+                                <state key="highlighted" image="quchong"/>
+                                <connections>
+                                    <action selector="removeSameAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="x9X-qv-mVJ"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="switch-bottom" translatesAutoresizingMaskIntoConstraints="NO" id="ned-5X-FPF">
                                 <rect key="frame" x="109.5" y="11.5" width="157" height="37"/>
                             </imageView>
@@ -182,7 +191,7 @@
                                 <state key="normal" image="add"/>
                                 <state key="highlighted" image="add"/>
                                 <connections>
-                                    <action selector="addButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="ABJ-Ap-UnH"/>
+                                    <action selector="addButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="pMT-Uu-PIX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFN-iV-h0s">
@@ -211,16 +220,6 @@
                                     <action selector="switchButton2Action:" destination="VGz-t0-PHF" eventType="touchUpInside" id="sws-yU-gDc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWy-0r-vRg">
-                                <rect key="frame" x="73" y="594" width="30" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="0">
-                                    <color key="titleColor" red="1" green="0.78823529411764703" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="ballCountButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="4Qn-Rh-VIg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqR-S9-7So" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
                                 <rect key="frame" x="24" y="594" width="39" height="39"/>
                                 <state key="normal" image="subtract"/>
@@ -229,13 +228,14 @@
                                     <action selector="subtractButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="RLl-TC-s86"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW4-ch-9nK" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                                <rect key="frame" x="302" y="6" width="48" height="48"/>
-                                <state key="normal" image="quchong"/>
-                                <state key="selected" image="quchong-selected"/>
-                                <state key="highlighted" image="quchong"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWy-0r-vRg">
+                                <rect key="frame" x="73" y="594" width="30" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" red="1" green="0.78823529411764703" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="removeSameAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="x9X-qv-mVJ"/>
+                                    <action selector="ballCountButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="MBa-0r-vMh"/>
                                 </connections>
                             </button>
                         </subviews>
