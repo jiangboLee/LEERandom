@@ -17,6 +17,7 @@ class ProduceRandom: NSObject {
     var numArr:[Int] = []
     var num: Int? {
         didSet {
+            numArr.removeAll()
             for a in 1...num! {
                 numArr.append(a)
             }
