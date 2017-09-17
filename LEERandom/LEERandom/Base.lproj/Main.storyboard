@@ -110,15 +110,6 @@
                                     <action selector="popAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="Swj-Fa-Nm2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW4-ch-9nK" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                                <rect key="frame" x="302" y="6" width="48" height="48"/>
-                                <state key="normal" image="quchong"/>
-                                <state key="selected" image="quchong-selected"/>
-                                <state key="highlighted" image="quchong"/>
-                                <connections>
-                                    <action selector="removeSameAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="x9X-qv-mVJ"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="switch-bottom" translatesAutoresizingMaskIntoConstraints="NO" id="ned-5X-FPF">
                                 <rect key="frame" x="109.5" y="11.5" width="157" height="37"/>
                             </imageView>
@@ -238,6 +229,15 @@
                                     <action selector="subtractButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="RLl-TC-s86"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW4-ch-9nK" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                                <rect key="frame" x="302" y="6" width="48" height="48"/>
+                                <state key="normal" image="quchong"/>
+                                <state key="selected" image="quchong-selected"/>
+                                <state key="highlighted" image="quchong"/>
+                                <connections>
+                                    <action selector="removeSameAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="x9X-qv-mVJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -292,6 +292,7 @@
                         <outlet property="machineHeight" destination="Fy9-Cx-fsg" id="UgW-EG-Bfa"/>
                         <outlet property="machineTop" destination="6Hv-Fd-8Ae" id="2n7-OY-yyB"/>
                         <outlet property="machineWidth" destination="y9T-44-NU6" id="bvc-Oj-sSB"/>
+                        <outlet property="removeSameButton" destination="MW4-ch-9nK" id="Pjd-iT-W6l"/>
                         <outlet property="setValueLable" destination="jCO-DB-fpj" id="9yI-1t-WAL"/>
                         <outlet property="startButtonBottom" destination="EM7-y3-XIx" id="LWh-Ad-Bc0"/>
                         <outlet property="startButtonWidth" destination="6Ub-P6-3AF" id="lQG-Kx-wkg"/>

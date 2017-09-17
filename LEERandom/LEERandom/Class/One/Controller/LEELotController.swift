@@ -23,6 +23,9 @@ class LEELotController: UIViewController {
     
     @IBOutlet weak var addBallView: UIView!
     
+    @IBOutlet weak var removeSameButton: HighlightButton!
+    
+    
     //尺寸适配
     @IBOutlet weak var machineHeight: NSLayoutConstraint!
     
@@ -48,6 +51,10 @@ class LEELotController: UIViewController {
     
     fileprivate var timer: Timer!
     
+    fileprivate var leaveBalls: Int?
+    fileprivate var isGoonLeave: Bool = false
+    fileprivate var produce: ProduceRandom!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,10 +76,11 @@ class LEELotController: UIViewController {
         switchButton2.isSelected = true
         switchButton2.isUserInteractionEnabled = true
         
-        timer = Timer(timeInterval: 0.2, target: self, selector: #selector(startBallRoll), userInfo: nil, repeats: true)
-        timer.fireDate = NSDate.distantFuture
-        RunLoop.current.add(timer, forMode: .commonModes)
+//        timer = Timer(timeInterval: 0.2, target: self, selector: #selector(startBallRoll), userInfo: nil, repeats: true)
+//        timer.fireDate = NSDate.distantFuture
+//        RunLoop.current.add(timer, forMode: .commonModes)
     
+        produce = ProduceRandom.shared
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -128,6 +136,7 @@ class LEELotController: UIViewController {
     
     @IBAction func ballCountButtonAction(_ sender: UIButton) {
         
+        sender.isSelected = !sender.isSelected;
         
     }
     //MARK: 加球，减球
@@ -188,22 +197,56 @@ class LEELotController: UIViewController {
     
     @IBAction func staetButtonAction(_ sender: UIButton) {
         
-//        timer.fireDate = NSDate(timeIntervalSinceNow: 0) as Date
+        
+        if balls.count == 0 {
+            return
+        }
+        if !isGoonLeave {
+            leaveBalls = Int((self.ballCount.titleLabel?.text)!)! - 1
+        }
+        
         startBallRoll()
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.9) { 
             
             let alertV = UINib(nibName: "LEEEndView", bundle: nil).instantiate(withOwner: nil, options: nil).last as! LEEEndView
             alertV.frame = self.view.bounds
-            alertV.ballNum = (self.ballCount.titleLabel?.text)!
-            alertV.againBlock = {
+            alertV.removeSame = self.removeSameButton.isSelected
+            alertV.levelBalls = self.leaveBalls
+            
+            if self.removeSameButton.isSelected {
                 
-//                for _ in balls {
-//                    
-//                }
+                self.produce.num = Int((self.ballCount.titleLabel?.text)!)!
+                alertV.ballNum = self.produce.noAgainStart()
+            } else {
+                if !self.isGoonLeave {
+                
+                    self.produce.num = Int((self.ballCount.titleLabel?.text)!)!
+                }
+                alertV.ballNum = self.produce.start()
+            }
+            
+//            alertV.ballNum = (self.ballCount.titleLabel?.text)!
+            alertV.againBlock = {
+                self.isGoonLeave = false
+                for _ in self.balls {
+                    self.subtractButtonAction(UIButton())
+                }
             }
             alertV.goonBlock = {
             
+                if self.removeSameButton.isSelected {
+                    
+                } else {
+                    self.isGoonLeave = true
+                    if self.leaveBalls == 0 {
+                        self.isGoonLeave = false
+                        self.leaveBalls = Int((self.ballCount.titleLabel?.text)!)
+                    }
+                    self.leaveBalls! -= 1
+                }
+                
+                self.staetButtonAction(UIButton())
             }
             
             self.view.addSubview(alertV)
@@ -212,24 +255,14 @@ class LEELotController: UIViewController {
     
     func startBallRoll() {
         
-        
         let baseAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
         baseAnimation.toValue = Double.pi * 10
         baseAnimation.duration = 2
         baseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         baseAnimation.isRemovedOnCompletion = false
         baseAnimation.fillMode = kCAFillModeForwards
-        addBallView.layer .add(baseAnimation, forKey: nil)
+        addBallView.layer.add(baseAnimation, forKey: nil)
         
-//        motionManger.startDeviceMotionUpdates(to: OperationQueue.current!) { [unowned self] (motion, error) in
-        
-//            let x: CGFloat = CGFloat(arc4random_uniform(30001)) / 10000.0 - 1.5
-//            let y: CGFloat = CGFloat(arc4random_uniform(30001)) / 10000.0 - 1.5
-//            let rotation = atan2(x, y)
-//           
-//            self.gravity?.angle = CGFloat(rotation)
-           
-//        }
     }
     
     
