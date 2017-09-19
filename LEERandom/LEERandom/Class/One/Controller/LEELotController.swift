@@ -25,6 +25,10 @@ class LEELotController: UIViewController {
     
     @IBOutlet weak var removeSameButton: HighlightButton!
     
+    @IBOutlet weak var addButton: HighlightButton!
+    @IBOutlet weak var jianButton: HighlightButton!
+    
+    @IBOutlet weak var ballScrollView: UIScrollView!
     
     //尺寸适配
     @IBOutlet weak var machineHeight: NSLayoutConstraint!
@@ -58,17 +62,24 @@ class LEELotController: UIViewController {
     fileprivate var donotJianBalls: Int?
     fileprivate var i: Int = 0
     
+    fileprivate var coverView: UIView = {
+        let v = UIView(frame: UIScreen.main.bounds)
+        v.backgroundColor = UIColor.clear
+        v.isUserInteractionEnabled = true
+        return v
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         machineWidth.constant = widthSize * 293.0
         machineHeight.constant = widthSize * 468.0
         if ISIPHONE_SE() {
-            machineTop.constant = 20.0
+            machineTop.constant = 85
             setValueLable.font
              = UIFont.systemFont(ofSize: 11)
         } else {
-            machineTop.constant = widthSize * 38.0
+            machineTop.constant = widthSize * 108
             setValueLable.font
                 = UIFont.systemFont(ofSize: 14)
         }
@@ -96,11 +107,14 @@ class LEELotController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    //MARK: 点击抽球球
     @IBAction func switchButtonAction(_ sender: UIButton) {
         sender.isUserInteractionEnabled = false
         sender.isSelected = false
         switchButton2.isSelected = true
         self.switchButton2.isUserInteractionEnabled = true
+        
+        ballScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         
         UIView.animate(withDuration: 0.05, animations: {
             
@@ -110,13 +124,14 @@ class LEELotController: UIViewController {
         }
         
     }
-    
+    //MARK: 点击翻卡片
     @IBAction func switchButton2Action(_ sender: UIButton) {
         sender.isUserInteractionEnabled = false
         sender.isSelected = false
         switchButton1.isSelected = true
         switchButton1.isUserInteractionEnabled = true
         
+        ballScrollView.setContentOffset(CGPoint(x: view.LEE_Width, y: 0), animated: true)
         UIView.animate(withDuration: 0.05, animations: {
             
             self.switchBackgroundImage.transform = CGAffineTransform.init(translationX: 75, y: 0)
@@ -248,18 +263,22 @@ class LEELotController: UIViewController {
     
     @IBAction func staetButtonAction(_ sender: UIButton) {
         
-        
         if balls.count == 0 {
             ballCountButtonAction(UIButton())
             return
         }
+        
+        self.view.addSubview(self.coverView)
+        
         if !isGoonLeave {
             leaveBalls = Int((self.ballCount.titleLabel?.text)!)! - 1
         }
         
         startBallRoll()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.9) { 
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.9) {
+            
+            self.coverView.removeFromSuperview()
             
             let alertV = UINib(nibName: "LEEEndView", bundle: nil).instantiate(withOwner: nil, options: nil).last as! LEEEndView
             alertV.frame = self.view.bounds
@@ -279,6 +298,7 @@ class LEELotController: UIViewController {
             }
             
             alertV.againBlock = {
+                
                 self.isGoonLeave = false
                 for _ in 1...Int((self.ballCount.titleLabel?.text)!)! {
                     self.subtractButtonAction(UIButton())
@@ -286,6 +306,8 @@ class LEELotController: UIViewController {
             }
             alertV.goonBlock = {
             
+               
+                
                 if self.removeSameButton.isSelected {
                     
                 } else {
