@@ -33,7 +33,7 @@ extension LEECardInputView: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 25
-        let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 13) ,NSParagraphStyleAttributeName: paragraphStyle]
+        let attributes = [NSParagraphStyleAttributeName: paragraphStyle]
         cardTextView.attributedText = NSAttributedString(string: textView.text, attributes: attributes)
         
         if (textView.text as NSString).length > 0 {
