@@ -30,6 +30,15 @@ class LEELotController: UIViewController {
     
     @IBOutlet weak var ballScrollView: UIScrollView!
     
+    //翻卡片
+    @IBOutlet weak var carCollectionView: UICollectionView!
+    
+    @IBOutlet weak var cardStartButton: HighlightButton!
+    
+    @IBOutlet weak var cardStartButtonWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var cardCollectionHeight: NSLayoutConstraint!
+    
     //尺寸适配
     @IBOutlet weak var machineHeight: NSLayoutConstraint!
     
@@ -62,6 +71,9 @@ class LEELotController: UIViewController {
     fileprivate var donotJianBalls: Int?
     fileprivate var i: Int = 0
     
+    //卡片
+    fileprivate var cardArr: [[NSInteger: String]] = [[8888: "last"]]
+    
     fileprivate var coverView: UIView = {
         let v = UIView(frame: UIScreen.main.bounds)
         v.backgroundColor = UIColor.clear
@@ -90,9 +102,8 @@ class LEELotController: UIViewController {
         switchButton2.isSelected = true
         switchButton2.isUserInteractionEnabled = true
         
-//        timer = Timer(timeInterval: 0.2, target: self, selector: #selector(startBallRoll), userInfo: nil, repeats: true)
-//        timer.fireDate = NSDate.distantFuture
-//        RunLoop.current.add(timer, forMode: .commonModes)
+        cardStartButtonWidth.constant = widthSize * 148
+        cardCollectionHeight.constant = widthSize * 440
     
         produce = ProduceRandom.shared
     }
@@ -447,3 +458,35 @@ extension LEELotController {
     }
     
 }
+
+extension LEELotController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cardArr.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath.item == cardArr.count - 1 {
+            
+            let cardInputView = UINib(nibName: "LEECardInputView", bundle: nil).instantiate(withOwner: nil, options: nil).last as! LEECardInputView
+            cardInputView.frame = view.bounds
+            UIApplication.shared.keyWindow?.addSubview(cardInputView)
+            
+        }
+    }
+}
+
+
+
+
+
+
+

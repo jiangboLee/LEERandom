@@ -8,8 +8,11 @@
 
 import UIKit
 
-public let widthSize: CGFloat = UIScreen.main.bounds.width / 375;
+public let widthSize: CGFloat = UIScreen.main.bounds.width / 375
 public func ISIPHONE_SE() -> Bool {
     return UIScreen.main.bounds.width == CGFloat(320.0)
 }
 
+
+public let screenWidth = UIScreen.main.bounds.width
+public let screenHeight = UIScreen.main.bounds.height
