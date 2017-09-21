@@ -8,10 +8,50 @@
 
 import UIKit
 
+typealias CardSureBlock = (String) -> ()
+typealias CardDeletedBlock = () -> ()
+
 class LEECardInputView: UIView {
 
     @IBOutlet weak var cardTextView: UITextView!
     @IBOutlet weak var noTextLable: UILabel!
+    
+    @IBOutlet weak var cardTitle: UILabel!
+    @IBOutlet weak var cardSureAction: UIButton!
+    @IBOutlet weak var lookCardDelButton: HighlightButton!
+    
+    @IBOutlet weak var lookCardSureButton: HighlightButton!
+    
+    var cardSureBlock: CardSureBlock?
+    var cardDeletedBlock: CardDeletedBlock?
+    
+    var addCard: Bool? {
+        didSet {
+            if addCard! {
+                cardSureAction.isHidden = false
+                lookCardDelButton.isHidden = true
+                lookCardSureButton.isHidden = true
+                cardTextView.becomeFirstResponder()
+            } else {
+                cardSureAction.isHidden = true
+                lookCardDelButton.isHidden = false
+                lookCardSureButton.isHidden = false
+            }
+        }
+    }
+    var cardStr: String = "" {
+        didSet {
+            if (cardStr as NSString).length > 0 {
+                noTextLable.isHidden = true
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = 25
+                let attributes = [NSParagraphStyleAttributeName: paragraphStyle]
+                cardTextView.attributedText = NSAttributedString(string: cardStr, attributes: attributes)
+            } else {
+            
+            }
+        }
+    }
     
     override func awakeFromNib() {
         
@@ -21,6 +61,15 @@ class LEECardInputView: UIView {
     @IBAction func closeButtonAction(_ sender: Any) {
         removeFromSuperview()
     }
+    
+    @IBAction func cardSureAction(_ sender: UIButton) {
+        
+        removeFromSuperview();
+        self.cardSureBlock?(cardTextView.text)
+    }
+    
+    
+    
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.endEditing(true)
@@ -78,6 +127,17 @@ extension LEECardInputView: UITextViewDelegate {
     
     }
     
+    //MARK: 删除
+    @IBAction func closeButton2Action(_ sender: Any) {
+        removeFromSuperview()
+        self.cardDeletedBlock?()
+    }
+    
+    //MARK: 完成
+    @IBAction func sureButton2Action(_ sender: Any) {
+        removeFromSuperview()
+        self.cardSureBlock?(cardTextView.text)
+    }
 }
 
 

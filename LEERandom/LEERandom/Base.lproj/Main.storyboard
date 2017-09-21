@@ -240,7 +240,7 @@
                                                 </constraints>
                                                 <collectionViewLayout key="collectionViewLayout" id="Jho-N5-NHu" customClass="LEEFlowLayout" customModule="LEERandom" customModuleProvider="target"/>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="bMO-ti-R4r">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="bMO-ti-R4r" customClass="LEECardCollectionViewCell" customModule="LEERandom" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="121" height="159"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -250,15 +250,27 @@
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-1" translatesAutoresizingMaskIntoConstraints="NO" id="ePh-mr-Uyw">
                                                                     <rect key="frame" x="0.0" y="0.0" width="121" height="159"/>
                                                                 </imageView>
+                                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctc-ou-4p2">
+                                                                    <rect key="frame" x="49.5" y="57.5" width="21.5" height="44"/>
+                                                                    <fontDescription key="fontDescription" name="FZZYK--GBK1-0" family="FZZongYi-M05" pointSize="38"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                         </view>
                                                         <constraints>
+                                                            <constraint firstItem="Ctc-ou-4p2" firstAttribute="centerY" secondItem="bMO-ti-R4r" secondAttribute="centerY" id="8Ve-RE-bln"/>
                                                             <constraint firstAttribute="bottom" secondItem="ePh-mr-Uyw" secondAttribute="bottom" id="PMg-DO-gXE"/>
+                                                            <constraint firstItem="Ctc-ou-4p2" firstAttribute="centerX" secondItem="bMO-ti-R4r" secondAttribute="centerX" id="VzN-2R-pOK"/>
                                                             <constraint firstItem="ePh-mr-Uyw" firstAttribute="top" secondItem="bMO-ti-R4r" secondAttribute="top" id="WPF-fr-nno"/>
                                                             <constraint firstAttribute="trailing" secondItem="ePh-mr-Uyw" secondAttribute="trailing" id="a0q-Jx-Dcv"/>
                                                             <constraint firstItem="ePh-mr-Uyw" firstAttribute="leading" secondItem="bMO-ti-R4r" secondAttribute="leading" id="d1j-7T-eK1"/>
                                                         </constraints>
                                                         <size key="customSize" width="121" height="159"/>
+                                                        <connections>
+                                                            <outlet property="cardBg" destination="ePh-mr-Uyw" id="MHW-l6-7ys"/>
+                                                            <outlet property="cardNumLable" destination="Ctc-ou-4p2" id="bJ9-Pj-Qzm"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>

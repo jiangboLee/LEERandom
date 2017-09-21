@@ -72,7 +72,8 @@ class LEELotController: UIViewController {
     fileprivate var i: Int = 0
     
     //卡片
-    fileprivate var cardArr: [[NSInteger: String]] = [[8888: "last"]]
+    fileprivate var cardArr: [String] = ["last"]
+    fileprivate var cardBgArr: [NSInteger] = [1]
     
     fileprivate var coverView: UIView = {
         let v = UIView(frame: UIScreen.main.bounds)
@@ -467,18 +468,45 @@ extension LEELotController: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! LEECardCollectionViewCell
+        
+        cell.index = cardBgArr[indexPath.item]
+        cell.cardNum = indexPath.item + 1
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let cardInputView = UINib(nibName: "LEECardInputView", bundle: nil).instantiate(withOwner: nil, options: nil).last as! LEECardInputView
+        cardInputView.frame = view.bounds
+        UIApplication.shared.keyWindow?.addSubview(cardInputView)
+        
         if indexPath.item == cardArr.count - 1 {
             
-            let cardInputView = UINib(nibName: "LEECardInputView", bundle: nil).instantiate(withOwner: nil, options: nil).last as! LEECardInputView
-            cardInputView.frame = view.bounds
-            UIApplication.shared.keyWindow?.addSubview(cardInputView)
+            cardInputView.cardTitle.text = "\(cardArr.count)号卡片"
+            cardInputView.addCard = true
+            cardInputView.cardSureBlock = { str in
+                
+                self.cardArr.insert(str, at: self.cardArr.count - 1)
+                self.cardBgArr.insert(2, at: 0)
+                self.carCollectionView.reloadData()
+                self.carCollectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+            }
+        } else {
+            cardInputView.cardTitle.text = "\(indexPath.item + 1)号卡片"
+            cardInputView.addCard = false
+            cardInputView.cardStr = self.cardArr[indexPath.item]
+            cardInputView.cardSureBlock = {str in
+                self.cardArr[indexPath.item] = str
+                self.carCollectionView.reloadData()
+            }
+            cardInputView.cardDeletedBlock = {
+                
+                self.cardArr.remove(at: indexPath.item)
+                self.cardBgArr.remove(at: 0)
+                self.carCollectionView.reloadData()
+            }
             
         }
     }

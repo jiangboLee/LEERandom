@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -58,6 +59,9 @@
                     <state key="normal" image="icon-zhuajiu-1"/>
                     <state key="selected" image="hui-wancheng"/>
                     <state key="highlighted" image="icon-zhuajiu-1"/>
+                    <connections>
+                        <action selector="cardSureAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="8Yg-5t-Ppo"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请设置标签(40字符以内)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saX-Rf-bLN">
                     <rect key="frame" x="98" y="223" width="152.5" height="20"/>
@@ -75,26 +79,50 @@
                         <outlet property="delegate" destination="iN0-l3-epB" id="6pL-VM-1zB"/>
                     </connections>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlw-Kx-bhx" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                    <rect key="frame" x="83" y="346" width="97" height="38"/>
+                    <state key="normal" image="icon-shanchu"/>
+                    <state key="highlighted" image="icon-shanchu"/>
+                    <connections>
+                        <action selector="closeButton2Action:" destination="iN0-l3-epB" eventType="touchUpInside" id="i9H-xP-I4i"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naH-91-tNi" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                    <rect key="frame" x="195.5" y="346" width="97" height="38"/>
+                    <state key="normal" image="icon-wancheng3"/>
+                    <state key="highlighted" image="icon-wancheng3"/>
+                    <connections>
+                        <action selector="sureButton2Action:" destination="iN0-l3-epB" eventType="touchUpInside" id="XEY-av-k7S"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="naH-91-tNi" firstAttribute="centerY" secondItem="qlw-Kx-bhx" secondAttribute="centerY" id="0Mn-Md-RKA"/>
                 <constraint firstItem="JBB-QR-rzZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AkM-OQ-ok5"/>
                 <constraint firstItem="Pel-rb-7Vu" firstAttribute="top" secondItem="6I1-69-o1O" secondAttribute="top" constant="-5" id="C5K-ww-qsC"/>
                 <constraint firstItem="EGi-s4-76u" firstAttribute="trailing" secondItem="6I1-69-o1O" secondAttribute="trailing" constant="-40" id="Slr-cw-pQa"/>
+                <constraint firstItem="qlw-Kx-bhx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.7" id="W65-VB-6eh"/>
                 <constraint firstItem="EGi-s4-76u" firstAttribute="leading" secondItem="6I1-69-o1O" secondAttribute="leading" constant="40" id="YAk-F6-DTA"/>
                 <constraint firstItem="Pel-rb-7Vu" firstAttribute="trailing" secondItem="6I1-69-o1O" secondAttribute="trailing" constant="-10" id="aMd-Ve-xxg"/>
                 <constraint firstItem="saX-Rf-bLN" firstAttribute="top" secondItem="EGi-s4-76u" secondAttribute="top" constant="5" id="bMK-N5-VDs"/>
+                <constraint firstItem="naH-91-tNi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.3" id="dEE-Vk-cwo"/>
                 <constraint firstItem="t4q-Dp-oYX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lzr-BI-2dh"/>
                 <constraint firstItem="6I1-69-o1O" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="n85-MK-KtX"/>
                 <constraint firstItem="saX-Rf-bLN" firstAttribute="leading" secondItem="EGi-s4-76u" secondAttribute="leading" constant="5" id="ntN-8D-6a1"/>
                 <constraint firstItem="6I1-69-o1O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="133" id="oK1-sd-InR"/>
+                <constraint firstItem="JBB-QR-rzZ" firstAttribute="centerY" secondItem="qlw-Kx-bhx" secondAttribute="centerY" id="pOg-yZ-cBz"/>
                 <constraint firstItem="EGi-s4-76u" firstAttribute="bottom" secondItem="6I1-69-o1O" secondAttribute="bottom" constant="-105" id="rP5-gZ-tBK"/>
                 <constraint firstItem="JBB-QR-rzZ" firstAttribute="bottom" secondItem="6I1-69-o1O" secondAttribute="bottom" constant="-53" id="sr9-sJ-Pn9"/>
                 <constraint firstItem="t4q-Dp-oYX" firstAttribute="top" secondItem="6I1-69-o1O" secondAttribute="top" constant="47.5" id="x38-iY-d4O"/>
                 <constraint firstItem="EGi-s4-76u" firstAttribute="top" secondItem="6I1-69-o1O" secondAttribute="top" constant="85" id="yZa-sI-4Zr"/>
             </constraints>
             <connections>
+                <outlet property="cardSureAction" destination="JBB-QR-rzZ" id="Ohk-Uy-pEZ"/>
                 <outlet property="cardTextView" destination="EGi-s4-76u" id="IdD-5Y-f0L"/>
+                <outlet property="cardTitle" destination="t4q-Dp-oYX" id="k9G-GN-BWl"/>
+                <outlet property="lookCardDelButton" destination="qlw-Kx-bhx" id="LFO-ec-3PX"/>
+                <outlet property="lookCardSureButton" destination="naH-91-tNi" id="U8b-LH-sCn"/>
                 <outlet property="noTextLable" destination="saX-Rf-bLN" id="XNE-tH-IQH"/>
             </connections>
         </view>
@@ -103,6 +131,8 @@
         <image name="bgtanchuang" width="269" height="307"/>
         <image name="close" width="40" height="40"/>
         <image name="hui-wancheng" width="115" height="44"/>
+        <image name="icon-shanchu" width="97" height="38"/>
+        <image name="icon-wancheng3" width="97" height="38"/>
         <image name="icon-zhuajiu-1" width="115" height="44"/>
     </resources>
 </document>
