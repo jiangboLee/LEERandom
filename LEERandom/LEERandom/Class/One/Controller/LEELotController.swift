@@ -357,7 +357,16 @@ class LEELotController: UIViewController {
         addBallView.layer.add(baseAnimation, forKey: nil)
         
     }
+    //MARK: 卡片开始
     
+    @IBAction func cardStartAction(_ sender: UIButton) {
+        
+        sender.isHidden = true
+        cardArr.removeLast()
+        
+        self.carCollectionView.reloadData()
+        
+    }
     
     deinit {
         if (motionManger != nil) {
@@ -469,8 +478,12 @@ extension LEELotController: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! LEECardCollectionViewCell
-        
-        cell.index = cardBgArr[indexPath.item]
+        if cardStartButton.isHidden {
+           
+            cell.index = 4;
+        } else {
+            cell.index = cardBgArr[indexPath.item]
+        }
         cell.cardNum = indexPath.item + 1
         
         return cell
@@ -510,6 +523,8 @@ extension LEELotController: UICollectionViewDelegate, UICollectionViewDataSource
             
         }
     }
+    
+    
 }
 
 

@@ -286,6 +286,9 @@
                                                 </constraints>
                                                 <state key="normal" image="start"/>
                                                 <state key="highlighted" image="start"/>
+                                                <connections>
+                                                    <action selector="cardStartAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="BLe-9J-MIH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
