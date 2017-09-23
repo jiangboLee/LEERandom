@@ -72,8 +72,11 @@ class LEELotController: UIViewController {
     fileprivate var i: Int = 0
     
     //卡片
+    fileprivate var cardNum: CardRandom!
     fileprivate var cardArr: [String] = ["last"]
     fileprivate var cardBgArr: [NSInteger] = [1]
+    fileprivate var fanCardOutArr: [NSInteger] = []
+    fileprivate var needAnimation: Bool = true
     
     fileprivate var coverView: UIView = {
         let v = UIView(frame: UIScreen.main.bounds)
@@ -107,6 +110,7 @@ class LEELotController: UIViewController {
         cardCollectionHeight.constant = widthSize * 440
     
         produce = ProduceRandom.shared
+        cardNum = CardRandom.shared
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -357,13 +361,17 @@ class LEELotController: UIViewController {
         addBallView.layer.add(baseAnimation, forKey: nil)
         
     }
-    //MARK: 卡片开始
     
+    //MARK: 卡片开始
     @IBAction func cardStartAction(_ sender: UIButton) {
         
         sender.isHidden = true
         cardArr.removeLast()
+        self.needAnimation = true
         
+        fanCardOutArr = Array.init(repeating: -1, count: cardArr.count)
+        cardBgArr = Array.init(repeating: 4, count: cardArr.count)
+        cardNum.num = cardArr.count
         self.carCollectionView.reloadData()
         
     }
@@ -479,12 +487,14 @@ extension LEELotController: UICollectionViewDelegate, UICollectionViewDataSource
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! LEECardCollectionViewCell
         if cardStartButton.isHidden {
-           
-            cell.index = 4;
+            
+            cell.cardNum = self.fanCardOutArr[indexPath.item]
+            
+            cell.needAnimation = needAnimation
         } else {
-            cell.index = cardBgArr[indexPath.item]
+            cell.cardNum = indexPath.item + 1
         }
-        cell.cardNum = indexPath.item + 1
+        cell.index = cardBgArr[indexPath.item]
         
         return cell
     }
@@ -495,33 +505,95 @@ extension LEELotController: UICollectionViewDelegate, UICollectionViewDataSource
         cardInputView.frame = view.bounds
         UIApplication.shared.keyWindow?.addSubview(cardInputView)
         
-        if indexPath.item == cardArr.count - 1 {
+        if cardStartButton.isHidden {
             
-            cardInputView.cardTitle.text = "\(cardArr.count)号卡片"
-            cardInputView.addCard = true
-            cardInputView.cardSureBlock = { str in
+            //已经翻过了
+            if fanCardOutArr[indexPath.item] != -1 {
+                cardInputView.cardTitle.text = "\(fanCardOutArr[indexPath.item])号卡片"
+                cardInputView.cardStr = self.cardArr[fanCardOutArr[indexPath.item] - 1]
                 
-                self.cardArr.insert(str, at: self.cardArr.count - 1)
-                self.cardBgArr.insert(2, at: 0)
-                self.carCollectionView.reloadData()
-                self.carCollectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+                cardInputView.addCard = 3
+                cardInputView.cardDeletedBlock = {
+                    //结束
+                    self.removeSameButton.isUserInteractionEnabled = true
+                    
+                    self.cardArr = ["last"]
+                    self.cardBgArr = [1]
+                    self.cardStartButton.isHidden = false
+                    self.carCollectionView.reloadData()
+                }
+                return
             }
-        } else {
-            cardInputView.cardTitle.text = "\(indexPath.item + 1)号卡片"
-            cardInputView.addCard = false
-            cardInputView.cardStr = self.cardArr[indexPath.item]
+            
+            //开始翻盘
+            var num: Int = 0
+            if removeSameButton.isSelected {
+                //去重
+                num = cardNum.cardNoAgainStart()
+            } else {
+                //不去重
+                num = cardNum.cardStart()
+            }
+            cardInputView.cardTitle.text = "\(num)号卡片"
+            cardInputView.cardStr = self.cardArr[num - 1]
+            
+            cardInputView.addCard = 3
             cardInputView.cardSureBlock = {str in
-                self.cardArr[indexPath.item] = str
+                
+                if self.removeSameButton.isSelected {
+                    //去重
+                    
+                } else {
+                    //不去重
+                    self.needAnimation = false
+                    self.fanCardOutArr[indexPath.item] = num
+                    self.cardBgArr[indexPath.item] = 3                    
+                    
+                }
+                self.removeSameButton.isUserInteractionEnabled = false
                 self.carCollectionView.reloadData()
             }
             cardInputView.cardDeletedBlock = {
-                
-                self.cardArr.remove(at: indexPath.item)
-                self.cardBgArr.remove(at: 0)
+                //结束
+                self.removeSameButton.isUserInteractionEnabled = true
+                self.cardArr = ["last"]
+                self.cardBgArr = [1]
+                self.cardStartButton.isHidden = false
                 self.carCollectionView.reloadData()
             }
+
+        } else {
             
+            if indexPath.item == cardArr.count - 1 {
+                
+                cardInputView.cardTitle.text = "\(cardArr.count)号卡片"
+                cardInputView.addCard = 1
+                cardInputView.cardSureBlock = { str in
+                    
+                    self.cardArr.insert(str, at: self.cardArr.count - 1)
+                    self.cardBgArr.insert(2, at: 0)
+                    self.carCollectionView.reloadData()
+                    self.carCollectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+                }
+            } else {
+                cardInputView.cardTitle.text = "\(indexPath.item + 1)号卡片"
+                cardInputView.addCard = 2
+                cardInputView.cardStr = self.cardArr[indexPath.item]
+                cardInputView.cardSureBlock = {str in
+                    self.cardArr[indexPath.item] = str
+                    self.carCollectionView.reloadData()
+                }
+                cardInputView.cardDeletedBlock = {
+                    
+                    self.cardArr.remove(at: indexPath.item)
+                    self.cardBgArr.remove(at: 0)
+                    self.carCollectionView.reloadData()
+                }
+                
+            }
+
         }
+        
     }
     
     

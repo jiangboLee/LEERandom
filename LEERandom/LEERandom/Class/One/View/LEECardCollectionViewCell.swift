@@ -14,6 +14,8 @@ class LEECardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cardNumLable: UILabel!
     
+    var needAnimation: Bool = true
+    
     var index: NSInteger = 0 {
         didSet {
             switch index {
@@ -36,21 +38,24 @@ class LEECardCollectionViewCell: UICollectionViewCell {
                 cardBg.image = #imageLiteral(resourceName: "wenhao")
                 cardNumLable.isHidden = true
                 
-                self.layer.removeAllAnimations()
-                self.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
-                UIView.animate(withDuration: 0.5, animations: {
+                if needAnimation {
                     
-                    self.layer.transform = CATransform3DMakeScale(1, 1, 1)
-                }, completion: { (finished) in
-                    
-                    let transition = CATransition()
-                    transition.type = "rippleEffect"
-                    transition.duration = 0.5
-//                    transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-                    transition.subtype = kCATransitionFade
-                    self.layer.add(transition, forKey: nil)
-                    
-                })
+                    self.layer.removeAllAnimations()
+                    self.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
+                    UIView.animate(withDuration: 0.5, animations: {
+                        
+                        self.layer.transform = CATransform3DMakeScale(1, 1, 1)
+                    }, completion: { (finished) in
+                        
+                        let transition = CATransition()
+                        transition.type = "rippleEffect"
+                        transition.duration = 0.5
+                        //                    transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                        transition.subtype = kCATransitionFade
+                        self.layer.add(transition, forKey: nil)
+                        
+                    })
+                }
                 
                 
                 break

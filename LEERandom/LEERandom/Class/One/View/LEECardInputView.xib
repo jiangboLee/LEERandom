@@ -69,7 +69,7 @@
                     <color key="textColor" red="0.53725490196078429" green="0.66666666666666663" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGi-s4-76u" customClass="LEETextView" customModule="LEERandom" customModuleProvider="target">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGi-s4-76u" customClass="LEETextView" customModule="LEERandom" customModuleProvider="target">
                     <rect key="frame" x="93" y="218" width="189" height="117"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="textColor" red="0.31372549019607843" green="0.26666666666666666" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -82,14 +82,16 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlw-Kx-bhx" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
                     <rect key="frame" x="83" y="346" width="97" height="38"/>
                     <state key="normal" image="icon-shanchu"/>
+                    <state key="selected" image="icon-jieshu"/>
                     <state key="highlighted" image="icon-shanchu"/>
                     <connections>
                         <action selector="closeButton2Action:" destination="iN0-l3-epB" eventType="touchUpInside" id="i9H-xP-I4i"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naH-91-tNi" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                    <rect key="frame" x="195.5" y="346" width="97" height="38"/>
+                    <rect key="frame" x="195" y="346" width="97" height="38"/>
                     <state key="normal" image="icon-wancheng3"/>
+                    <state key="selected" image="icon-jixu-1"/>
                     <state key="highlighted" image="icon-wancheng3"/>
                     <connections>
                         <action selector="sureButton2Action:" destination="iN0-l3-epB" eventType="touchUpInside" id="XEY-av-k7S"/>
@@ -131,6 +133,8 @@
         <image name="bgtanchuang" width="269" height="307"/>
         <image name="close" width="40" height="40"/>
         <image name="hui-wancheng" width="115" height="44"/>
+        <image name="icon-jieshu" width="97" height="38"/>
+        <image name="icon-jixu-1" width="97" height="38"/>
         <image name="icon-shanchu" width="97" height="38"/>
         <image name="icon-wancheng3" width="97" height="38"/>
         <image name="icon-zhuajiu-1" width="115" height="44"/>
