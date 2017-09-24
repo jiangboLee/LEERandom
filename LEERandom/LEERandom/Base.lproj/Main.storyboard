@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JzU-dK-ik3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JzU-dK-ik3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -93,7 +93,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3t-eK-Jna" userLabel="View1">
-                                        <rect key="frame" x="-375" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Qo-EO-u2f">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -227,7 +227,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axF-rj-Set" userLabel="View2">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="375" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg3" translatesAutoresizingMaskIntoConstraints="NO" id="PfM-lC-mWK">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -315,7 +315,7 @@
                                     <constraint firstAttribute="bottom" secondItem="J3t-eK-Jna" secondAttribute="bottom" id="DPk-TK-H5s"/>
                                     <constraint firstAttribute="bottom" secondItem="axF-rj-Set" secondAttribute="bottom" id="P29-ov-cE7"/>
                                     <constraint firstItem="axF-rj-Set" firstAttribute="top" secondItem="3PA-GO-J96" secondAttribute="top" id="UkZ-Zo-ZsN"/>
-                                    <constraint firstItem="J3t-eK-Jna" firstAttribute="leading" secondItem="3PA-GO-J96" secondAttribute="leading" constant="-375" id="cnD-2O-0KO"/>
+                                    <constraint firstItem="J3t-eK-Jna" firstAttribute="leading" secondItem="3PA-GO-J96" secondAttribute="leading" id="cnD-2O-0KO"/>
                                     <constraint firstItem="J3t-eK-Jna" firstAttribute="width" secondItem="3PA-GO-J96" secondAttribute="width" id="hpN-g6-ZJo"/>
                                 </constraints>
                             </scrollView>
@@ -326,7 +326,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpK-99-xKb" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                                <rect key="frame" x="25" y="6" width="48" height="48"/>
+                                <rect key="frame" x="25" y="26" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="SHN-E1-c6W"/>
                                     <constraint firstAttribute="height" constant="48" id="az2-vz-o8e"/>
@@ -338,7 +338,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW4-ch-9nK" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                                <rect key="frame" x="302" y="6" width="48" height="48"/>
+                                <rect key="frame" x="302" y="26" width="48" height="48"/>
                                 <state key="normal" image="quchong"/>
                                 <state key="selected" image="quchong-selected"/>
                                 <state key="highlighted" image="quchong"/>
@@ -347,13 +347,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="switch-bottom" translatesAutoresizingMaskIntoConstraints="NO" id="ned-5X-FPF">
-                                <rect key="frame" x="109.5" y="11.5" width="157" height="37"/>
+                                <rect key="frame" x="109.5" y="31.5" width="157" height="37"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="switch" translatesAutoresizingMaskIntoConstraints="NO" id="5Tl-Bh-GRN">
-                                <rect key="frame" x="112.5" y="13" width="81" height="36"/>
+                                <rect key="frame" x="112.5" y="33" width="81" height="36"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFN-iV-h0s">
-                                <rect key="frame" x="111" y="16" width="77.5" height="30"/>
+                                <rect key="frame" x="111" y="36" width="77.5" height="30"/>
                                 <fontDescription key="fontDescription" name="FZZYK--GBK1-0" family="FZZongYi-M05" pointSize="15"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="抽球球"/>
@@ -366,7 +366,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="022-hJ-3uD">
-                                <rect key="frame" x="182" y="16" width="86" height="30"/>
+                                <rect key="frame" x="182" y="36" width="86" height="30"/>
                                 <fontDescription key="fontDescription" name="FZZYK--GBK1-0" family="FZZongYi-M05" pointSize="15"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="翻卡片"/>
@@ -438,7 +438,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="JzU-dK-ik3" customClass="LEENavController" customModule="LEERandom" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FSK-3Q-Yyz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

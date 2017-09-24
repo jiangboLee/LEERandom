@@ -10,10 +10,10 @@ import Foundation
 
 extension String {
     //Range转换为NSRange
-   func nsRange(from range: Range<Index>) -> NSRange {
+   /*func nsRange(from range: Range<Index>) -> NSRange {
         let lower = UTF16View.Index(range.lowerBound, within: utf16)
         let upper = UTF16View.Index(range.upperBound, within: utf16)
-        return NSRange(location: utf16.startIndex.distance(to: lower), length: lower.distance(to: upper))
+    return NSRange(location: utf16.startIndex.distance(to: lower), length: lower!.distance(to: upper))
     }
-
+ */
 }

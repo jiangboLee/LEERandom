@@ -37,10 +37,11 @@ class LEEEndView: UIView {
     
     var levelBalls: Int? {
         didSet {
-            let str = "*我来选提醒您还剩 \(levelBalls!) 个球"
-            let attr = NSMutableAttributedString(string: str)
-            let range = str.range(of: "\(levelBalls!)")!
-            attr.addAttributes([NSForegroundColorAttributeName: UIColor.yellow], range: str.nsRange(from: range))
+            let str = "*我来选提醒您还剩 \(levelBalls!) 个球" as NSString
+            let attr = NSMutableAttributedString(string: str as String)
+//            let range = str.range(of: "\(levelBalls!)")!
+            let range = str.range(of: "\(levelBalls!)")
+            attr.addAttributes([NSForegroundColorAttributeName: UIColor.yellow], range: range)
             leaveBallsLable.attributedText = attr
         }
     }
