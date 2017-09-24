@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreSpotlight
+import MobileCoreServices
 
 class ViewController: UIViewController {
 
@@ -20,6 +22,19 @@ class ViewController: UIViewController {
         buttonTop.constant = widthSize * 231;
         button1Width.constant = widthSize * 142;
         button2Width.constant = widthSize * 141;
+        
+        if #available(iOS 9.0, *) {
+            let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
+            attributeSet.title = "我来选"
+            attributeSet.contentDescription = "快速产生随机的卡片~"
+            attributeSet.keywords = ["抓阄", "随机选", "随便选", "随机", "公平选"]
+            let item = CSSearchableItem(uniqueIdentifier: "keywprds", domainIdentifier: "keyW", attributeSet: attributeSet)
+            CSSearchableIndex.default().indexSearchableItems([item], completionHandler: nil)
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
