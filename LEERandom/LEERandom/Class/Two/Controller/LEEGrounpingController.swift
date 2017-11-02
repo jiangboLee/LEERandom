@@ -58,17 +58,17 @@ class LEEGrounpingController: UIViewController {
             return
         }
         
-        var arr:[Int] = []
+        var arr:[String] = []
         for i in 1...(num as NSString).intValue {
-            arr.append(Int(i))
+            arr.append("\(i)"+",")
         }
         
-        arr = shuffle(arr: arr)
+        arr = shuffle(arr: arr) as! [String]
         print(arr)
         
     }
     //MARK: 数组随机排列
-    private func shuffle(arr: Array<Int>) -> Array<Int> {
+    private func shuffle(arr: Array<Any>) -> Array<Any> {
         var arr = arr
         for index in 0..<arr.count {
             let newIndex = Int(arc4random_uniform(UInt32(arr.count - index))) + index
