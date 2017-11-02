@@ -52,6 +52,8 @@ class LEELotController: UIViewController {
     
     @IBOutlet weak var setValueLable: UILabel!
     
+    @IBOutlet weak var twoCardsLable: UILabel!
+    
     private var isMachineImage: Bool = false
     
     fileprivate var animator: UIDynamicAnimator?
@@ -142,6 +144,7 @@ class LEELotController: UIViewController {
     }
     //MARK: 点击翻卡片
     @IBAction func switchButton2Action(_ sender: UIButton) {
+        
         sender.isUserInteractionEnabled = false
         sender.isSelected = false
         switchButton1.isSelected = true
@@ -364,6 +367,23 @@ class LEELotController: UIViewController {
     
     //MARK: 卡片开始
     @IBAction func cardStartAction(_ sender: UIButton) {
+        
+        if cardArr.count <= 2 {
+            
+            twoCardsLable.isHidden = false;
+            twoCardsLable.alpha = 0.5;
+            UIView.animate(withDuration: 1, animations: {
+                self.twoCardsLable.alpha = 1;
+            })
+            UIView.animate(withDuration: 1, animations: {
+                self.twoCardsLable.alpha = 0;
+            }, completion: { (_) in
+                self.twoCardsLable.isHidden = true;
+            })
+            
+            return;
+        }
+        
         
         sender.isHidden = true
         cardArr.removeLast()

@@ -26,6 +26,7 @@
 		B7923E781F6033BF00F671B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7923E761F6033BF00F671B9 /* Main.storyboard */; };
 		B7923E7A1F6033BF00F671B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7923E791F6033BF00F671B9 /* Assets.xcassets */; };
 		B7923E7D1F6033BF00F671B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7923E7B1F6033BF00F671B9 /* LaunchScreen.storyboard */; };
+		B7A3B18E1FAB5D1C00527C47 /* LEEGrounpingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A3B18D1FAB5D1C00527C47 /* LEEGrounpingController.swift */; };
 		B7C036531F6425F20032311C /* LEENavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C036521F6425F20032311C /* LEENavController.swift */; };
 		B7C036551F6426C40032311C /* LEELotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C036541F6426C40032311C /* LEELotController.swift */; };
 		B7C0367B1F6429A40032311C /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C036581F6429A40032311C /* Constraint.swift */; };
@@ -64,6 +65,8 @@
 		B7C0369C1F6429A40032311C /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0367A1F6429A40032311C /* UILayoutSupport+Extensions.swift */; };
 		B7C0369F1F651C610032311C /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0369E1F651C610032311C /* HighlightButton.swift */; };
 		B7C036A11F6526350032311C /* 方正综艺_GBK的副本.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7C036A01F6526350032311C /* 方正综艺_GBK的副本.ttf */; };
+		B7C8EFE81FAB656F0064D678 /* LEEStareAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C8EFE71FAB656F0064D678 /* LEEStareAlertView.swift */; };
+		B7C8EFEA1FAB65770064D678 /* LEEStareAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7C8EFE91FAB65770064D678 /* LEEStareAlertView.xib */; };
 		B7D6B8F81F6541C900FB20C8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8F71F6541C900FB20C8 /* UIView+Extension.swift */; };
 		B7D6B8FA1F65769800FB20C8 /* LEECircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8F91F65769800FB20C8 /* LEECircleImage.swift */; };
 		B7D6B8FC1F66C29500FB20C8 /* LEEConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8FB1F66C29500FB20C8 /* LEEConfigure.swift */; };
@@ -91,6 +94,7 @@
 		B7923E791F6033BF00F671B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7923E7C1F6033BF00F671B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7923E7E1F6033BF00F671B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
+		B7A3B18D1FAB5D1C00527C47 /* LEEGrounpingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEGrounpingController.swift; sourceTree = "<group>"; };
 		B7C036521F6425F20032311C /* LEENavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEENavController.swift; sourceTree = "<group>"; };
 		B7C036541F6426C40032311C /* LEELotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEELotController.swift; sourceTree = "<group>"; };
 		B7C036581F6429A40032311C /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 		B7C0367A1F6429A40032311C /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		B7C0369E1F651C610032311C /* HighlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
 		B7C036A01F6526350032311C /* 方正综艺_GBK的副本.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正综艺_GBK的副本.ttf"; sourceTree = "<group>"; };
+		B7C8EFE71FAB656F0064D678 /* LEEStareAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEEStareAlertView.swift; sourceTree = "<group>"; };
+		B7C8EFE91FAB65770064D678 /* LEEStareAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LEEStareAlertView.xib; sourceTree = "<group>"; };
 		B7D6B8F71F6541C900FB20C8 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B7D6B8F91F65769800FB20C8 /* LEECircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEECircleImage.swift; sourceTree = "<group>"; };
 		B7D6B8FB1F66C29500FB20C8 /* LEEConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEEConfigure.swift; sourceTree = "<group>"; };
@@ -258,6 +264,7 @@
 		B7C0364E1F6425640032311C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B7A3B18D1FAB5D1C00527C47 /* LEEGrounpingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +279,8 @@
 		B7C036501F6425640032311C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B7C8EFE71FAB656F0064D678 /* LEEStareAlertView.swift */,
+				B7C8EFE91FAB65770064D678 /* LEEStareAlertView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -412,6 +421,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7C8EFEA1FAB65770064D678 /* LEEStareAlertView.xib in Resources */,
 				B7286E051F72A03B00A758D3 /* LEECardInputView.xib in Resources */,
 				B7286E071F72A4DD00A758D3 /* 方正准圆简体.ttf in Resources */,
 				B7C036991F6429A40032311C /* Info.plist in Resources */,
@@ -465,9 +475,11 @@
 				B7C036941F6429A40032311C /* ConstraintRelation.swift in Sources */,
 				B7C0368D1F6429A40032311C /* ConstraintMakerPriortizable.swift in Sources */,
 				B7C0369F1F651C610032311C /* HighlightButton.swift in Sources */,
+				B7A3B18E1FAB5D1C00527C47 /* LEEGrounpingController.swift in Sources */,
 				B7286DF51F6ABA9B00A758D3 /* LEEEndView.swift in Sources */,
 				B7C0368A1F6429A40032311C /* ConstraintMakerEditable.swift in Sources */,
 				B7C0367D1F6429A40032311C /* ConstraintConfig.swift in Sources */,
+				B7C8EFE81FAB656F0064D678 /* LEEStareAlertView.swift in Sources */,
 				B7C036851F6429A40032311C /* ConstraintLayoutGuide.swift in Sources */,
 				B7D6B8F81F6541C900FB20C8 /* UIView+Extension.swift in Sources */,
 				B7C0367B1F6429A40032311C /* Constraint.swift in Sources */,

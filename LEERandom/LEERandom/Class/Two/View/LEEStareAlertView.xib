@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LEEStareAlertView" customModule="LEERandom" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2i0-PY-w5m">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tanchuang_bg" translatesAutoresizingMaskIntoConstraints="NO" id="9ZJ-LW-Orc">
+                            <rect key="frame" x="24" y="103" width="327" height="373"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="9ZJ-LW-Orc" secondAttribute="height" multiplier="655:747" id="wKW-4z-0jG"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4FY-TO-ZcQ" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
+                            <rect key="frame" x="296.5" y="100" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="4FY-TO-ZcQ" secondAttribute="height" multiplier="1:1" id="Ug6-yL-0OM"/>
+                                <constraint firstAttribute="width" constant="50" id="teZ-rP-Wlf"/>
+                            </constraints>
+                            <state key="normal" image="tanchuang_close"/>
+                            <state key="highlighted" image="tanchuang_close"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.60421125856164382" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="9ZJ-LW-Orc" firstAttribute="top" secondItem="2i0-PY-w5m" secondAttribute="top" constant="103" id="A1U-Vz-AHc"/>
+                        <constraint firstItem="4FY-TO-ZcQ" firstAttribute="top" secondItem="9ZJ-LW-Orc" secondAttribute="top" constant="-3" id="JuQ-6Y-3Sp"/>
+                        <constraint firstItem="4FY-TO-ZcQ" firstAttribute="trailing" secondItem="9ZJ-LW-Orc" secondAttribute="trailing" constant="-5" id="Xx1-lT-spq"/>
+                        <constraint firstItem="9ZJ-LW-Orc" firstAttribute="centerX" secondItem="2i0-PY-w5m" secondAttribute="centerX" id="r6i-UB-19a"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="2i0-PY-w5m" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2ZZ-lC-gQp"/>
+                <constraint firstAttribute="bottom" secondItem="2i0-PY-w5m" secondAttribute="bottom" id="Hwb-Wl-oPS"/>
+                <constraint firstItem="2i0-PY-w5m" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Uas-QT-k6D"/>
+                <constraint firstAttribute="trailing" secondItem="2i0-PY-w5m" secondAttribute="trailing" id="xj0-az-tjG"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="tanchuang_bg" width="327" height="373"/>
+        <image name="tanchuang_close" width="50" height="50"/>
+    </resources>
+</document>
