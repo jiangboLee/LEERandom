@@ -10,12 +10,36 @@ import UIKit
 
 class LEEStareAlertView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    let  cellId = "LEEStartAlertCellId"
+    
+    public var zhuNum: Int?
+    public var resultArr: [String]?
+    
+    @IBOutlet weak var tableV: UITableView!
+    
+    override func awakeFromNib() {
+        tableV.register(UINib.init(nibName: "LEEStartAlertCell", bundle: nil), forCellReuseIdentifier: cellId)
+        
     }
-    */
-
+    @IBAction func closeAlertAction(_ sender: Any) {
+        self.removeFromSuperview()
+    }
+    
 }
+
+extension LEEStareAlertView: UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return zhuNum ?? 0
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! LEEStartAlertCell
+        
+        cell.groupNum = indexPath.row + 1
+        cell.groupStr = resultArr?[indexPath.row]
+        return cell
+    }
+    
+}
+

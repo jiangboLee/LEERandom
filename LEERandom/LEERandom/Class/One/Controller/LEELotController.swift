@@ -396,10 +396,18 @@ class LEELotController: UIViewController {
         
     }
     
-    deinit {
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if self.gravity != nil {
+            self.gravity = nil
+        }
         if (motionManger != nil) {
             motionManger.stopDeviceMotionUpdates()
         }
+    }
+    deinit {
+//        print("释放了")
     }
 }
 

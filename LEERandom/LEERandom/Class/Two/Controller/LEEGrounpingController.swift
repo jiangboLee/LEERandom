@@ -31,6 +31,7 @@ class LEEGrounpingController: UIViewController {
 
     }
 
+    
     @IBAction func beiginGroupingAction(_ sender: Any) {
         
         guard let num = textField1.text else {
@@ -49,24 +50,73 @@ class LEEGrounpingController: UIViewController {
             return
         }
         
-        if (num as NSString).intValue > 9999 {
+        let zoomNum = (num as NSString).integerValue
+        let gropNum = (zhuNum as NSString).integerValue
+        
+        
+        if zoomNum > 9999 {
             animationAlertLable(swith: 3)
             return
         }
-        if (num as NSString).intValue < (zhuNum as NSString).intValue {
+        if zoomNum < gropNum {
             animationAlertLable(swith: 4)
             return
         }
         
         var arr:[String] = []
         for i in 1...(num as NSString).intValue {
-            arr.append("\(i)"+",")
+            arr.append("\(i)")
+        }
+        
+        if zoomNum % gropNum == 0 {
+            
+        } else {
+            
         }
         
         arr = shuffle(arr: arr) as! [String]
-        print(arr)
+//        print(arr)
+        
+        let alertView = UINib.init(nibName: "LEEStareAlertView", bundle: nil).instantiate(withOwner: nil, options: nil).last as! LEEStareAlertView
+        alertView.frame = UIScreen.main.bounds
+        view.addSubview(alertView)
+        
+        alertView.zhuNum = gropNum
+        alertView.resultArr = splitArray(arr: arr, subSize: gropNum)
+        
         
     }
+    //MARK:  将数组拆分成固定长度
+    private func splitArray(arr: Array<String>, subSize: Int) -> Array<String> {
+        
+        let count = arr.count / subSize
+        var mutableArr: [String] = []
+        
+        for i in 0..<subSize {
+           
+            let index = i * count
+            var tempArr:[String] = []
+            tempArr.removeAll()
+            var j = index
+            while (j < count * (i + 1) && j < arr.count) {
+                
+                tempArr.append(arr[j])
+                j += 1
+            }
+            if i == subSize - 1 {
+                while (j >=  count * (i + 1) && j < arr.count) {
+                    
+                    tempArr.append(arr[j])
+                    j += 1
+                }
+            }
+            let string = tempArr.joined(separator: ",")
+            mutableArr.append(string)
+            
+        }
+        return mutableArr
+    }
+    
     //MARK: 数组随机排列
     private func shuffle(arr: Array<Any>) -> Array<Any> {
         var arr = arr
