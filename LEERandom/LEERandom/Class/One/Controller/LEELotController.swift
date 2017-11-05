@@ -189,9 +189,9 @@ class LEELotController: UIViewController {
             
             if Int(str)! > 22 {
                 
-                for i in 1...22 {
+                for _ in 1...22 {
                     
-                    self.addBall(count: i)
+                    self.addButtonAction(UIButton())
                 }
             } else {
                 for _ in 1...Int(str)! {
@@ -411,6 +411,9 @@ class LEELotController: UIViewController {
         
         if (motionManger != nil) {
             motionManger.stopDeviceMotionUpdates()
+            motionManger.stopGyroUpdates()
+            motionManger.stopMagnetometerUpdates()
+            motionManger.stopAccelerometerUpdates()
             motionManger = nil;
         }
     }
