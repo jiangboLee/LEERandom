@@ -111,13 +111,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shurushuzhi" translatesAutoresizingMaskIntoConstraints="NO" id="sqU-GV-Ctl">
-                                <rect key="frame" x="47" y="282" width="111" height="21"/>
+                                <rect key="frame" x="47" y="292" width="111" height="21"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shezhishuzu" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-5l-ICM">
-                                <rect key="frame" x="47" y="349" width="83" height="21"/>
+                                <rect key="frame" x="47" y="359" width="83" height="21"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="kuang1" translatesAutoresizingMaskIntoConstraints="NO" id="Ncb-Dk-Lwb">
-                                <rect key="frame" x="178" y="274.5" width="154" height="35"/>
+                                <rect key="frame" x="178" y="284.5" width="154" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="4aG-mz-s7l"/>
                                     <constraint firstAttribute="width" constant="154" id="UbL-vD-Dnh"/>
@@ -127,7 +127,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="kuang2" translatesAutoresizingMaskIntoConstraints="NO" id="eZq-cJ-2hD">
-                                <rect key="frame" x="150" y="342" width="181" height="35"/>
+                                <rect key="frame" x="150" y="352" width="181" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="3nV-tj-hg1"/>
                                     <constraint firstAttribute="width" constant="181" id="eyD-ct-U5A"/>
@@ -159,7 +159,7 @@
                             <constraint firstItem="eZq-cJ-2hD" firstAttribute="leading" secondItem="YfS-5l-ICM" secondAttribute="trailing" constant="20" id="Gbn-3G-d7m"/>
                             <constraint firstAttribute="bottom" secondItem="bLO-cI-ygF" secondAttribute="bottom" id="H2z-ig-HMX"/>
                             <constraint firstItem="AUs-tC-44b" firstAttribute="top" secondItem="mzg-mU-wxC" secondAttribute="bottom" constant="22" id="HjV-vf-E1t"/>
-                            <constraint firstItem="sqU-GV-Ctl" firstAttribute="top" secondItem="CRa-EM-1n9" secondAttribute="bottom" constant="200" id="Jqm-QG-AgV"/>
+                            <constraint firstItem="sqU-GV-Ctl" firstAttribute="top" secondItem="CRa-EM-1n9" secondAttribute="bottom" constant="210" id="Jqm-QG-AgV"/>
                             <constraint firstItem="Ncb-Dk-Lwb" firstAttribute="leading" secondItem="sqU-GV-Ctl" secondAttribute="trailing" constant="20" id="RFT-bn-aE9"/>
                             <constraint firstItem="CRa-EM-1n9" firstAttribute="leading" secondItem="Wbd-FG-e60" secondAttribute="leading" constant="34" id="XH6-Q5-pZg"/>
                             <constraint firstItem="CRa-EM-1n9" firstAttribute="top" secondItem="Wbd-FG-e60" secondAttribute="top" constant="34" id="bCX-7W-YnA"/>
@@ -278,11 +278,22 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWy-0r-vRg">
-                                                        <rect key="frame" x="77" y="599" width="30" height="38"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <rect key="frame" x="77" y="600" width="30" height="36"/>
+                                                        <fontDescription key="fontDescription" name="FZZYK--GBK1-0" family="FZZongYi-M05" pointSize="20.5"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" red="1" green="0.78823529411764703" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="LEE_shadowColor">
+                                                                <color key="value" red="0.3411764705882353" green="0.11372549019607843" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="LEE_shadowOffset">
+                                                                <size key="value" width="1" height="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="LEE_shadowRadius">
+                                                                <real key="value" value="0.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="ballCountButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="MBa-0r-vMh"/>
                                                         </connections>
@@ -397,10 +408,10 @@
                                                     <action selector="cardStartAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="BLe-9J-MIH"/>
                                                 </connections>
                                             </button>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最少要2张卡片哦~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYE-wp-AgS">
-                                                <rect key="frame" x="69.5" y="471" width="237" height="34"/>
-                                                <fontDescription key="fontDescription" name="FZY3JW--GB1-0" family="FZZhunYuan-M02S" pointSize="29"/>
-                                                <nil key="textColor"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*最少要2张卡片哦~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYE-wp-AgS">
+                                                <rect key="frame" x="94.5" y="479" width="187.5" height="26"/>
+                                                <fontDescription key="fontDescription" name="FZY3JW--GB1-0" family="FZZhunYuan-M02S" pointSize="22"/>
+                                                <color key="textColor" red="0.81960784313725488" green="0.73545523084962816" blue="0.084220730695762205" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>

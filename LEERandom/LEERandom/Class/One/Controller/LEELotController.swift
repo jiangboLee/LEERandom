@@ -186,11 +186,21 @@ class LEELotController: UIViewController {
                     self.subtractButtonAction(UIButton())
                 }
             }
-            for i in 1...Int(str)! {
-                self.i = i
-                self.addButtonAction(UIButton())
+            
+            if Int(str)! > 22 {
+                
+                for i in 1...22 {
+                    
+                    self.addBall(count: i)
+                }
+            } else {
+                for _ in 1...Int(str)! {
+                    
+                    self.addButtonAction(UIButton())
+                }
             }
-//            self.ballCount.setTitle(str, for: .normal)
+            self.i = Int(str)!
+            self.ballCount.setTitle(str, for: .normal)
         }
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 5, initialSpringVelocity: 8, options: .curveEaseInOut, animations: {
@@ -399,11 +409,9 @@ class LEELotController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        if self.gravity != nil {
-            self.gravity = nil
-        }
         if (motionManger != nil) {
             motionManger.stopDeviceMotionUpdates()
+            motionManger = nil;
         }
     }
     deinit {
@@ -441,7 +449,9 @@ extension LEELotController {
 //            let roll = "\(String(describing: motion?.attitude.roll))"
 //            print(pitch + "===" + roll)
             let rotation = atan2(motion!.attitude.pitch, motion!.attitude.roll)
-            self.gravity?.angle = CGFloat(rotation)
+            if self.gravity != nil  {
+                self.gravity?.angle = CGFloat(rotation)
+            }
         }
     }
     //MARK: 增加手势

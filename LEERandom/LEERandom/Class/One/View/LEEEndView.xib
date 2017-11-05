@@ -57,8 +57,8 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*我来选提醒您还剩18个球" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojJ-u5-NDc">
-                    <rect key="frame" x="130.5" y="377" width="115.5" height="14"/>
-                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="10"/>
+                    <rect key="frame" x="124" y="373" width="127" height="15.5"/>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="11"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -84,7 +84,7 @@
             <constraints>
                 <constraint firstItem="PT6-g7-MRa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.4" id="CrY-q1-qgy"/>
                 <constraint firstItem="PT6-g7-MRa" firstAttribute="top" secondItem="P8I-YB-KUA" secondAttribute="top" id="JkK-xN-vFd"/>
-                <constraint firstItem="ojJ-u5-NDc" firstAttribute="top" secondItem="mwl-6b-rrt" secondAttribute="bottom" constant="-8" id="Qy1-c8-ZV8"/>
+                <constraint firstItem="ojJ-u5-NDc" firstAttribute="top" secondItem="mwl-6b-rrt" secondAttribute="bottom" constant="-12" id="Qy1-c8-ZV8"/>
                 <constraint firstItem="ojJ-u5-NDc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RCP-bp-Zht"/>
                 <constraint firstItem="mwl-6b-rrt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="Uev-5P-6oZ"/>
                 <constraint firstItem="mwl-6b-rrt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="alB-hs-vBO"/>
