@@ -15,14 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonTop: NSLayoutConstraint!
     @IBOutlet weak var button1Width: NSLayoutConstraint!
     @IBOutlet weak var button2Width: NSLayoutConstraint!
+    @IBOutlet weak var homeBackGround: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        buttonTop.constant = widthSize * 231;
-        button1Width.constant = widthSize * 142;
-        button2Width.constant = widthSize * 141;
-        
+ 
         if #available(iOS 9.0, *) {
             let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
             attributeSet.title = "我来选"
@@ -34,6 +31,17 @@ class ViewController: UIViewController {
             // Fallback on earlier versions
         }
         
+        button1Width.constant = widthSize * 142;
+        button2Width.constant = widthSize * 141;
+        if ISIPHONE_X() {
+            
+            homeBackGround.image = #imageLiteral(resourceName: "home_X.png")
+            buttonTop.constant = widthSize * 300;
+        } else {
+            homeBackGround.image = #imageLiteral(resourceName: "bg1")
+            buttonTop.constant = widthSize * 231;
+           
+        }
         
     }
 

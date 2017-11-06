@@ -90,6 +90,12 @@ class LEELotController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 11.0, *) {
+            ballScrollView.contentInsetAdjustmentBehavior = .never
+        } else {
+            // Fallback on earlier versions
+        }
+        
         machineWidth.constant = widthSize * 293.0
         machineHeight.constant = widthSize * 468.0
         if ISIPHONE_SE() {
@@ -102,7 +108,14 @@ class LEELotController: UIViewController {
                 = UIFont.systemFont(ofSize: 14)
         }
         startButtonWidth.constant = widthSize * 148.0
-        startButtonBottom.constant = widthSize * 25.0
+        
+        if ISIPHONE_X() {
+            
+            startButtonBottom.constant = 25.0
+        } else {
+            
+            startButtonBottom.constant = widthSize * 23.0
+        }
         
         switchButton1.isUserInteractionEnabled = false
         switchButton2.isSelected = true
@@ -424,8 +437,6 @@ class LEELotController: UIViewController {
 
 extension LEELotController {
 
-    
-    
     fileprivate func setDynamicAnimator() {
         
         animator = UIDynamicAnimator(referenceView: addBallView)
@@ -445,7 +456,7 @@ extension LEELotController {
         animator?.addBehavior(dynamicItemBehavior!)
         
         motionManger = CMMotionManager()
-        motionManger.deviceMotionUpdateInterval = 0.02
+        motionManger.deviceMotionUpdateInterval = 0.1
         motionManger.startDeviceMotionUpdates(to: OperationQueue.current!) { [unowned self] (motion, error) in
 //            let yaw = "\(motion?.attitude.yaw)"
 //            let pitch = "\(String(describing: motion?.attitude.pitch))"

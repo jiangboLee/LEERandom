@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JzU-dK-ik3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JzU-dK-ik3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -77,6 +77,7 @@
                         <outlet property="button1Width" destination="lo0-nw-rcY" id="URG-CF-I4b"/>
                         <outlet property="button2Width" destination="WQe-8n-I8A" id="E2V-kc-1xZ"/>
                         <outlet property="buttonTop" destination="iNY-Sq-z5S" id="m98-1G-xp2"/>
+                        <outlet property="homeBackGround" destination="qWR-mL-Zaq" id="DJc-mI-8cs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -234,7 +235,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKj-cz-MtG" userLabel="start" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                                                        <rect key="frame" x="207" y="590" width="148" height="57"/>
+                                                        <rect key="frame" x="207" y="582" width="148" height="57"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="148" id="6Ub-P6-3AF"/>
                                                             <constraint firstAttribute="width" secondItem="hKj-cz-MtG" secondAttribute="height" multiplier="148:57" id="HO2-x6-hU4"/>
@@ -246,7 +247,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置数值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCO-DB-fpj">
-                                                        <rect key="frame" x="64" y="576" width="56" height="16.5"/>
+                                                        <rect key="frame" x="64" y="568" width="56" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="FZZYK--GBK1-0" family="FZZongYi-M05" pointSize="14"/>
                                                         <color key="textColor" red="0.55686274509803924" green="0.22745098039215686" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -263,14 +264,14 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingvalue-bg" translatesAutoresizingMaskIntoConstraints="NO" id="zYa-fn-JKY">
-                                                        <rect key="frame" x="33" y="601" width="119" height="34"/>
+                                                        <rect key="frame" x="33" y="593" width="119" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="119" id="VQH-8L-agd"/>
                                                             <constraint firstAttribute="height" constant="34" id="gpg-hc-lIL"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aM-ue-UsN" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                                                        <rect key="frame" x="118" y="599" width="39" height="39"/>
+                                                        <rect key="frame" x="118" y="591" width="39" height="39"/>
                                                         <state key="normal" image="add"/>
                                                         <state key="highlighted" image="add"/>
                                                         <connections>
@@ -278,7 +279,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWy-0r-vRg">
-                                                        <rect key="frame" x="77" y="600" width="30" height="36"/>
+                                                        <rect key="frame" x="77" y="592" width="30" height="36"/>
                                                         <fontDescription key="fontDescription" name="FZZYK--GBK1-0" family="FZZongYi-M05" pointSize="20.5"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" red="1" green="0.78823529411764703" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
@@ -299,7 +300,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqR-S9-7So" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                                                        <rect key="frame" x="28" y="599" width="39" height="39"/>
+                                                        <rect key="frame" x="28" y="591" width="39" height="39"/>
                                                         <state key="normal" image="subtract"/>
                                                         <state key="highlighted" image="subtract"/>
                                                         <connections>
@@ -311,7 +312,6 @@
                                                 <constraints>
                                                     <constraint firstItem="yPf-21-9W9" firstAttribute="trailing" secondItem="A3M-SB-Mmc" secondAttribute="trailing" constant="-5" id="2mW-d0-WTf"/>
                                                     <constraint firstItem="kWy-0r-vRg" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="9Yz-oa-4Ka"/>
-                                                    <constraint firstAttribute="bottom" secondItem="hKj-cz-MtG" secondAttribute="bottom" constant="20" id="B2S-xk-Qzv"/>
                                                     <constraint firstItem="yPf-21-9W9" firstAttribute="top" secondItem="A3M-SB-Mmc" secondAttribute="top" constant="12" id="BdR-x1-Q7H"/>
                                                     <constraint firstItem="9WA-Lm-U2C" firstAttribute="leading" secondItem="A3M-SB-Mmc" secondAttribute="leading" id="HuE-h4-CEF"/>
                                                     <constraint firstItem="zYa-fn-JKY" firstAttribute="centerX" secondItem="jCO-DB-fpj" secondAttribute="centerX" id="I8g-c0-tLx"/>
@@ -331,6 +331,7 @@
                                                     <constraint firstItem="3aM-ue-UsN" firstAttribute="trailing" secondItem="zYa-fn-JKY" secondAttribute="trailing" constant="5" id="r0w-yU-PhJ"/>
                                                     <constraint firstItem="kWy-0r-vRg" firstAttribute="centerX" secondItem="jCO-DB-fpj" secondAttribute="centerX" id="sgP-aN-JtZ"/>
                                                     <constraint firstItem="9WA-Lm-U2C" firstAttribute="top" secondItem="A3M-SB-Mmc" secondAttribute="top" id="ueV-Oh-8Cj"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="hKj-cz-MtG" secondAttribute="bottom" constant="20" id="vmC-fI-ww0"/>
                                                     <constraint firstItem="X0b-4f-rgY" firstAttribute="top" secondItem="0Qo-EO-u2f" secondAttribute="top" id="wXq-sL-unT"/>
                                                     <constraint firstItem="zYa-fn-JKY" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="yqc-jr-fC8"/>
                                                 </constraints>
@@ -397,7 +398,7 @@
                                                 </connections>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFU-6e-EhI" userLabel="start" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                                                <rect key="frame" x="113" y="585" width="148" height="57"/>
+                                                <rect key="frame" x="113" y="577" width="148" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="CFU-6e-EhI" secondAttribute="height" multiplier="148:57" id="Rlz-pp-f3P"/>
                                                     <constraint firstAttribute="width" constant="148" id="kvi-l9-0wf"/>
@@ -409,7 +410,7 @@
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*最少要2张卡片哦~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYE-wp-AgS">
-                                                <rect key="frame" x="94.5" y="479" width="187.5" height="26"/>
+                                                <rect key="frame" x="94.5" y="471" width="187.5" height="26"/>
                                                 <fontDescription key="fontDescription" name="FZY3JW--GB1-0" family="FZZhunYuan-M02S" pointSize="22"/>
                                                 <color key="textColor" red="0.81960784313725488" green="0.73545523084962816" blue="0.084220730695762205" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -418,6 +419,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="PfM-lC-mWK" secondAttribute="trailing" id="1Tq-YM-UfB"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="CFU-6e-EhI" secondAttribute="bottom" constant="25" id="2kJ-Ia-5NL"/>
                                             <constraint firstItem="CFU-6e-EhI" firstAttribute="top" secondItem="fYE-wp-AgS" secondAttribute="bottom" constant="80" id="52x-Y5-WSl"/>
                                             <constraint firstItem="KwZ-SP-HPe" firstAttribute="top" secondItem="axF-rj-Set" secondAttribute="top" constant="101" id="5Yt-mQ-csj"/>
                                             <constraint firstAttribute="bottom" secondItem="PfM-lC-mWK" secondAttribute="bottom" id="7Mv-Pd-8cV"/>
@@ -427,7 +429,6 @@
                                             <constraint firstItem="KwZ-SP-HPe" firstAttribute="centerX" secondItem="axF-rj-Set" secondAttribute="centerX" id="N8O-5h-fca"/>
                                             <constraint firstItem="PfM-lC-mWK" firstAttribute="top" secondItem="axF-rj-Set" secondAttribute="top" id="Y9Z-DG-HQT"/>
                                             <constraint firstItem="CFU-6e-EhI" firstAttribute="centerX" secondItem="axF-rj-Set" secondAttribute="centerX" id="ozW-1G-hlO"/>
-                                            <constraint firstAttribute="bottom" secondItem="CFU-6e-EhI" secondAttribute="bottom" constant="25" id="wF1-mN-wyl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -547,7 +548,7 @@
                         <outlet property="machineWidth" destination="y9T-44-NU6" id="bvc-Oj-sSB"/>
                         <outlet property="removeSameButton" destination="MW4-ch-9nK" id="Pjd-iT-W6l"/>
                         <outlet property="setValueLable" destination="jCO-DB-fpj" id="9yI-1t-WAL"/>
-                        <outlet property="startButtonBottom" destination="B2S-xk-Qzv" id="eOn-pj-CnW"/>
+                        <outlet property="startButtonBottom" destination="vmC-fI-ww0" id="PTH-Y4-JWQ"/>
                         <outlet property="startButtonWidth" destination="6Ub-P6-3AF" id="lQG-Kx-wkg"/>
                         <outlet property="switchBackgroundImage" destination="5Tl-Bh-GRN" id="hqC-MW-YIz"/>
                         <outlet property="switchButton1" destination="GFN-iV-h0s" id="orN-6D-PK0"/>
