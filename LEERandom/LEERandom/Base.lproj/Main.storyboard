@@ -177,8 +177,11 @@
                     <navigationItem key="navigationItem" id="D7K-4p-Irg"/>
                     <connections>
                         <outlet property="alertLable" destination="mzg-mU-wxC" id="Pzr-6F-jtZ"/>
+                        <outlet property="bgImageV" destination="bLO-cI-ygF" id="c6F-Xr-ktd"/>
+                        <outlet property="goBackButtonTop" destination="bCX-7W-YnA" id="6wX-lX-Kas"/>
                         <outlet property="textField1" destination="Ncb-Dk-Lwb" id="5Uc-3o-hfc"/>
                         <outlet property="textField2" destination="eZq-cJ-2hD" id="Wo3-kh-99w"/>
+                        <outlet property="topXconstraint" destination="Jqm-QG-AgV" id="9OO-jN-eso"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0QS-l4-nwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -317,13 +320,13 @@
                                                     <constraint firstItem="zYa-fn-JKY" firstAttribute="centerX" secondItem="jCO-DB-fpj" secondAttribute="centerX" id="I8g-c0-tLx"/>
                                                     <constraint firstItem="X0b-4f-rgY" firstAttribute="leading" secondItem="0Qo-EO-u2f" secondAttribute="leading" id="IUG-c2-3cc"/>
                                                     <constraint firstItem="cqR-S9-7So" firstAttribute="leading" secondItem="0Qo-EO-u2f" secondAttribute="leadingMargin" constant="20" id="KWX-ZW-jo0"/>
+                                                    <constraint firstItem="A3M-SB-Mmc" firstAttribute="top" secondItem="0Qo-EO-u2f" secondAttribute="top" constant="108" id="MEv-9x-N5y"/>
                                                     <constraint firstItem="A3M-SB-Mmc" firstAttribute="centerX" secondItem="0Qo-EO-u2f" secondAttribute="centerX" constant="1" id="NXH-s3-pi6"/>
                                                     <constraint firstItem="3aM-ue-UsN" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="Nc6-QW-qrC"/>
                                                     <constraint firstAttribute="trailing" secondItem="hKj-cz-MtG" secondAttribute="trailing" constant="20" id="P4X-bh-TMz"/>
                                                     <constraint firstItem="9WA-Lm-U2C" firstAttribute="trailing" secondItem="A3M-SB-Mmc" secondAttribute="trailing" id="XAx-2A-Khi"/>
                                                     <constraint firstItem="zYa-fn-JKY" firstAttribute="top" secondItem="jCO-DB-fpj" secondAttribute="bottom" constant="8" id="ZRw-Wc-Yjc"/>
                                                     <constraint firstItem="hKj-cz-MtG" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="c3i-bR-320"/>
-                                                    <constraint firstItem="A3M-SB-Mmc" firstAttribute="top" secondItem="0Qo-EO-u2f" secondAttribute="top" constant="108" id="eFP-Ye-Pat"/>
                                                     <constraint firstItem="zYa-fn-JKY" firstAttribute="leading" secondItem="cqR-S9-7So" secondAttribute="leading" constant="5" id="eRf-bg-ntT"/>
                                                     <constraint firstAttribute="trailing" secondItem="X0b-4f-rgY" secondAttribute="trailing" id="h5f-jf-RlA"/>
                                                     <constraint firstItem="yPf-21-9W9" firstAttribute="leading" secondItem="A3M-SB-Mmc" secondAttribute="leading" constant="5" id="hDK-8f-FOe"/>
@@ -508,13 +511,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fpK-99-xKb" firstAttribute="top" secondItem="YnX-jc-Nxu" secondAttribute="top" constant="6" id="0WR-UT-Red"/>
                             <constraint firstAttribute="bottom" secondItem="3PA-GO-J96" secondAttribute="bottom" id="8UB-NM-2N9"/>
                             <constraint firstItem="7TT-XJ-VHA" firstAttribute="leading" secondItem="YnX-jc-Nxu" secondAttribute="leading" id="Ctm-d1-2l4"/>
                             <constraint firstItem="GFN-iV-h0s" firstAttribute="leading" secondItem="ned-5X-FPF" secondAttribute="leading" constant="2" id="G0Q-7L-kmA"/>
                             <constraint firstItem="GFN-iV-h0s" firstAttribute="centerY" secondItem="ned-5X-FPF" secondAttribute="centerY" constant="1" id="GAj-b4-XKZ"/>
                             <constraint firstItem="ned-5X-FPF" firstAttribute="centerX" secondItem="YnX-jc-Nxu" secondAttribute="centerX" id="Gs5-de-wbx"/>
                             <constraint firstItem="GFN-iV-h0s" firstAttribute="centerX" secondItem="ned-5X-FPF" secondAttribute="centerX" multiplier="0.8" id="HMb-jZ-IUa"/>
-                            <constraint firstItem="fpK-99-xKb" firstAttribute="top" secondItem="YnX-jc-Nxu" secondAttribute="top" constant="6" id="Nat-nf-Z18"/>
                             <constraint firstItem="3PA-GO-J96" firstAttribute="top" secondItem="YnX-jc-Nxu" secondAttribute="top" id="Oev-IY-E4O"/>
                             <constraint firstItem="022-hJ-3uD" firstAttribute="centerX" secondItem="ned-5X-FPF" secondAttribute="centerX" multiplier="1.2" id="Tlv-Dk-0rW"/>
                             <constraint firstItem="7TT-XJ-VHA" firstAttribute="top" secondItem="YnX-jc-Nxu" secondAttribute="top" id="X8Z-MX-Y8o"/>
@@ -541,10 +544,14 @@
                         <outlet property="cardCollectionHeight" destination="8CZ-ro-kQj" id="BZe-aK-YRI"/>
                         <outlet property="cardStartButton" destination="CFU-6e-EhI" id="foe-gf-ul6"/>
                         <outlet property="cardStartButtonWidth" destination="kvi-l9-0wf" id="gCN-el-fRt"/>
+                        <outlet property="collectionTop" destination="5Yt-mQ-csj" id="zjd-xu-Pcv"/>
+                        <outlet property="goBackButtonTop" destination="0WR-UT-Red" id="1aW-oL-5tl"/>
+                        <outlet property="iphoneXNavHeight" destination="3Vq-xQ-vjj" id="Cd1-W3-Wb5"/>
+                        <outlet property="iphoneXNavgationBarImage" destination="7TT-XJ-VHA" id="amw-VK-T59"/>
                         <outlet property="jianButton" destination="cqR-S9-7So" id="yKT-Cw-i36"/>
                         <outlet property="machineBallImage" destination="A3M-SB-Mmc" id="Q7P-i6-Dwp"/>
                         <outlet property="machineHeight" destination="Fy9-Cx-fsg" id="UgW-EG-Bfa"/>
-                        <outlet property="machineTop" destination="eFP-Ye-Pat" id="rSF-qF-JNd"/>
+                        <outlet property="machineTop" destination="MEv-9x-N5y" id="4AX-rD-gKS"/>
                         <outlet property="machineWidth" destination="y9T-44-NU6" id="bvc-Oj-sSB"/>
                         <outlet property="removeSameButton" destination="MW4-ch-9nK" id="Pjd-iT-W6l"/>
                         <outlet property="setValueLable" destination="jCO-DB-fpj" id="9yI-1t-WAL"/>

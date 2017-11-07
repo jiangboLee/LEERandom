@@ -13,6 +13,11 @@ class LEEGrounpingController: UIViewController {
     @IBOutlet weak var textField1: UITextField!
     @IBOutlet weak var textField2: UITextField!
     @IBOutlet weak var alertLable: UILabel!
+    @IBOutlet weak var bgImageV: UIImageView!
+    
+    @IBOutlet weak var topXconstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var goBackButtonTop: NSLayoutConstraint!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -29,6 +34,17 @@ class LEEGrounpingController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if ISIPHONE_X() {
+            
+            bgImageV.image = #imageLiteral(resourceName: "gorupX.png")
+            topXconstraint.constant = 210 + 50;
+            goBackButtonTop.constant = 34 + 43;
+        } else {
+            bgImageV.image = #imageLiteral(resourceName: "fenzu_bg")
+            topXconstraint.constant = 210;
+            goBackButtonTop.constant = 34;
+        }
+        
     }
 
     

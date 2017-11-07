@@ -22,6 +22,8 @@
 		B7286E0D1F73FBD500A758D3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7286E0C1F73FBD500A758D3 /* UIColor+Extension.swift */; };
 		B7286E0F1F769A1300A758D3 /* CardRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7286E0E1F769A1300A758D3 /* CardRandom.swift */; };
 		B73F799F1FB0AE490082EA94 /* home_X.png in Resources */ = {isa = PBXBuildFile; fileRef = B73F799E1FB0AE490082EA94 /* home_X.png */; };
+		B73F79A51FB1E79F0082EA94 /* Navbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B73F79A41FB1E79E0082EA94 /* Navbg.png */; };
+		B73F79A71FB1ED260082EA94 /* gorupX.png in Resources */ = {isa = PBXBuildFile; fileRef = B73F79A61FB1ED250082EA94 /* gorupX.png */; };
 		B7923E731F6033BF00F671B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7923E721F6033BF00F671B9 /* AppDelegate.swift */; };
 		B7923E751F6033BF00F671B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7923E741F6033BF00F671B9 /* ViewController.swift */; };
 		B7923E781F6033BF00F671B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7923E761F6033BF00F671B9 /* Main.storyboard */; };
@@ -91,6 +93,8 @@
 		B7286E0C1F73FBD500A758D3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B7286E0E1F769A1300A758D3 /* CardRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardRandom.swift; sourceTree = "<group>"; };
 		B73F799E1FB0AE490082EA94 /* home_X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_X.png; sourceTree = "<group>"; };
+		B73F79A41FB1E79E0082EA94 /* Navbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Navbg.png; sourceTree = "<group>"; };
+		B73F79A61FB1ED250082EA94 /* gorupX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gorupX.png; sourceTree = "<group>"; };
 		B7923E6F1F6033BF00F671B9 /* LEERandom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEERandom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7923E721F6033BF00F671B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7923E741F6033BF00F671B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 		B73F799D1FB0AE1F0082EA94 /* IphoneXSource */ = {
 			isa = PBXGroup;
 			children = (
+				B73F79A61FB1ED250082EA94 /* gorupX.png */,
+				B73F79A41FB1E79E0082EA94 /* Navbg.png */,
 				B73F799E1FB0AE490082EA94 /* home_X.png */,
 			);
 			path = IphoneXSource;
@@ -440,6 +446,7 @@
 			files = (
 				B7C8EFEA1FAB65770064D678 /* LEEStareAlertView.xib in Resources */,
 				B7286E051F72A03B00A758D3 /* LEECardInputView.xib in Resources */,
+				B73F79A71FB1ED260082EA94 /* gorupX.png in Resources */,
 				B7286E071F72A4DD00A758D3 /* 方正准圆简体.ttf in Resources */,
 				B7C036991F6429A40032311C /* Info.plist in Resources */,
 				B7C036A11F6526350032311C /* 方正综艺_GBK的副本.ttf in Resources */,
@@ -447,6 +454,7 @@
 				B7286DF71F6ABAA300A758D3 /* LEEEndView.xib in Resources */,
 				B7923E7A1F6033BF00F671B9 /* Assets.xcassets in Resources */,
 				B7923E781F6033BF00F671B9 /* Main.storyboard in Resources */,
+				B73F79A51FB1E79F0082EA94 /* Navbg.png in Resources */,
 				B73F799F1FB0AE490082EA94 /* home_X.png in Resources */,
 				B7C8EFEE1FAD5E1B0064D678 /* LEEStartAlertCell.xib in Resources */,
 				B7286DFF1F6E762C00A758D3 /* LEEInputView.xib in Resources */,

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,14 +26,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kuang" translatesAutoresizingMaskIntoConstraints="NO" id="bCx-bU-ScL">
-                            <rect key="frame" x="52.5" y="133" width="270" height="308"/>
+                            <rect key="frame" x="52" y="161" width="270" height="308"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="270" id="BYA-ix-80O"/>
                                 <constraint firstAttribute="width" secondItem="bCx-bU-ScL" secondAttribute="height" multiplier="269:307" id="DKU-Zo-RVD"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ur-OE-GGm" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                            <rect key="frame" x="278" y="130" width="40" height="40"/>
+                            <rect key="frame" x="277" y="158" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="7VN-Fv-G2y"/>
                                 <constraint firstAttribute="width" secondItem="0ur-OE-GGm" secondAttribute="height" multiplier="1:1" id="e2x-4b-NQ1"/>
@@ -44,14 +45,14 @@
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiaokuang" translatesAutoresizingMaskIntoConstraints="NO" id="Um3-rD-eBZ">
-                            <rect key="frame" x="102.5" y="240.5" width="170" height="63"/>
+                            <rect key="frame" x="102.5" y="268.5" width="170" height="63"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="170" id="IRR-Wy-7wN"/>
                                 <constraint firstAttribute="width" secondItem="Um3-rD-eBZ" secondAttribute="height" multiplier="170:63" id="Qi0-Xw-oeK"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuG-qD-aik" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                            <rect key="frame" x="130" y="334" width="115" height="44"/>
+                            <rect key="frame" x="130" y="362" width="115" height="44"/>
                             <state key="normal" image="icon-zhuajiu-1"/>
                             <state key="selected" image="hui-wancheng"/>
                             <state key="highlighted" image="icon-zhuajiu-1"/>
@@ -60,7 +61,7 @@
                             </connections>
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQq-wo-pKj">
-                            <rect key="frame" x="122.5" y="250.5" width="130" height="43"/>
+                            <rect key="frame" x="122.5" y="278.5" width="130" height="43"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="FZZYK--GBK1-0" family="FZZongYi-M05" pointSize="29"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -72,10 +73,10 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="gQq-wo-pKj" firstAttribute="bottom" secondItem="Um3-rD-eBZ" secondAttribute="bottom" constant="-10" id="3aL-Y2-6tx"/>
+                        <constraint firstItem="bCx-bU-ScL" firstAttribute="top" secondItem="AO8-eC-XL9" secondAttribute="topMargin" constant="133" id="4YO-Vp-TEH"/>
                         <constraint firstItem="0ur-OE-GGm" firstAttribute="top" secondItem="bCx-bU-ScL" secondAttribute="top" constant="-3" id="59e-IG-SQ7"/>
                         <constraint firstItem="uuG-qD-aik" firstAttribute="centerX" secondItem="AO8-eC-XL9" secondAttribute="centerX" id="7sy-Gj-Usx"/>
                         <constraint firstItem="bCx-bU-ScL" firstAttribute="centerX" secondItem="AO8-eC-XL9" secondAttribute="centerX" id="E3r-v6-tE6"/>
-                        <constraint firstItem="bCx-bU-ScL" firstAttribute="top" secondItem="AO8-eC-XL9" secondAttribute="top" constant="133" id="SMi-YM-R48"/>
                         <constraint firstItem="gQq-wo-pKj" firstAttribute="trailing" secondItem="Um3-rD-eBZ" secondAttribute="trailing" constant="-20" id="Uma-Ng-Ebb"/>
                         <constraint firstItem="gQq-wo-pKj" firstAttribute="leading" secondItem="Um3-rD-eBZ" secondAttribute="leading" constant="20" id="bRH-CN-567"/>
                         <constraint firstItem="uuG-qD-aik" firstAttribute="top" secondItem="Um3-rD-eBZ" secondAttribute="bottom" constant="30.5" id="fFx-Wt-gCc"/>
@@ -98,7 +99,7 @@
             <connections>
                 <outlet property="bgView" destination="AO8-eC-XL9" id="R61-rM-yPH"/>
                 <outlet property="inputTextField" destination="gQq-wo-pKj" id="JEJ-Ch-fBa"/>
-                <outlet property="inputViewTop" destination="SMi-YM-R48" id="tHN-1T-Drx"/>
+                <outlet property="inputViewTop" destination="4YO-Vp-TEH" id="Cb3-V6-WhF"/>
                 <outlet property="sureInputButton" destination="uuG-qD-aik" id="RDp-zK-a23"/>
             </connections>
         </view>

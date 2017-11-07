@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,14 +26,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgtanchuang" translatesAutoresizingMaskIntoConstraints="NO" id="6I1-69-o1O">
-                    <rect key="frame" x="53" y="133" width="269" height="307"/>
+                    <rect key="frame" x="53" y="153" width="269" height="307"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="6I1-69-o1O" secondAttribute="height" multiplier="269:307" id="RLi-9u-4vn"/>
                         <constraint firstAttribute="width" constant="269" id="Usn-Fd-Ehw"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pel-rb-7Vu" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                    <rect key="frame" x="272" y="128" width="40" height="40"/>
+                    <rect key="frame" x="272" y="148" width="40" height="40"/>
                     <state key="normal" image="close"/>
                     <state key="highlighted" image="close"/>
                     <connections>
@@ -40,7 +41,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1号卡片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4q-Dp-oYX">
-                    <rect key="frame" x="145" y="180.5" width="85.5" height="28"/>
+                    <rect key="frame" x="145" y="200.5" width="85.5" height="28"/>
                     <fontDescription key="fontDescription" name="FZY3JW--GB1-0" family="FZZhunYuan-M02S" pointSize="24"/>
                     <color key="textColor" red="0.98039215686274506" green="1" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -57,7 +58,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBB-QR-rzZ" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                    <rect key="frame" x="130" y="343" width="115" height="44"/>
+                    <rect key="frame" x="130" y="363" width="115" height="44"/>
                     <state key="normal" image="icon-zhuajiu-1"/>
                     <state key="selected" image="hui-wancheng"/>
                     <state key="highlighted" image="icon-zhuajiu-1"/>
@@ -66,13 +67,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请设置标签(40字符以内)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saX-Rf-bLN">
-                    <rect key="frame" x="98" y="223" width="152.5" height="20"/>
+                    <rect key="frame" x="98" y="243" width="152.5" height="20"/>
                     <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
                     <color key="textColor" red="0.72549019607843135" green="0.66666666666666663" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGi-s4-76u" customClass="LEETextView" customModule="LEERandom" customModuleProvider="target">
-                    <rect key="frame" x="93" y="218" width="189" height="117"/>
+                    <rect key="frame" x="93" y="238" width="189" height="117"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="textColor" red="0.3411764705882353" green="0.28235294117647058" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="13"/>
@@ -82,7 +83,7 @@
                     </connections>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlw-Kx-bhx" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                    <rect key="frame" x="87" y="346" width="97" height="38"/>
+                    <rect key="frame" x="87" y="366" width="97" height="38"/>
                     <state key="normal" image="icon-shanchu"/>
                     <state key="selected" image="icon-jieshu"/>
                     <state key="highlighted" image="icon-shanchu"/>
@@ -91,7 +92,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naH-91-tNi" customClass="HighlightButton" customModule="LEERandom" customModuleProvider="target">
-                    <rect key="frame" x="191" y="346" width="97" height="38"/>
+                    <rect key="frame" x="191" y="366" width="97" height="38"/>
                     <state key="normal" image="icon-wancheng3"/>
                     <state key="selected" image="icon-jixu-1"/>
                     <state key="highlighted" image="icon-wancheng3"/>
@@ -105,6 +106,7 @@
                 <constraint firstItem="naH-91-tNi" firstAttribute="centerY" secondItem="qlw-Kx-bhx" secondAttribute="centerY" id="0Mn-Md-RKA"/>
                 <constraint firstItem="JBB-QR-rzZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AkM-OQ-ok5"/>
                 <constraint firstItem="Pel-rb-7Vu" firstAttribute="top" secondItem="6I1-69-o1O" secondAttribute="top" constant="-5" id="C5K-ww-qsC"/>
+                <constraint firstItem="6I1-69-o1O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="133" id="H8n-Zw-eAO"/>
                 <constraint firstItem="EGi-s4-76u" firstAttribute="trailing" secondItem="6I1-69-o1O" secondAttribute="trailing" constant="-40" id="Slr-cw-pQa"/>
                 <constraint firstItem="qlw-Kx-bhx" firstAttribute="leading" secondItem="6I1-69-o1O" secondAttribute="leading" constant="34" id="Xto-ER-tRG"/>
                 <constraint firstItem="EGi-s4-76u" firstAttribute="leading" secondItem="6I1-69-o1O" secondAttribute="leading" constant="40" id="YAk-F6-DTA"/>
@@ -114,7 +116,6 @@
                 <constraint firstItem="t4q-Dp-oYX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lzr-BI-2dh"/>
                 <constraint firstItem="6I1-69-o1O" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="n85-MK-KtX"/>
                 <constraint firstItem="saX-Rf-bLN" firstAttribute="leading" secondItem="EGi-s4-76u" secondAttribute="leading" constant="5" id="ntN-8D-6a1"/>
-                <constraint firstItem="6I1-69-o1O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="133" id="oK1-sd-InR"/>
                 <constraint firstItem="JBB-QR-rzZ" firstAttribute="centerY" secondItem="qlw-Kx-bhx" secondAttribute="centerY" id="pOg-yZ-cBz"/>
                 <constraint firstItem="EGi-s4-76u" firstAttribute="bottom" secondItem="6I1-69-o1O" secondAttribute="bottom" constant="-105" id="rP5-gZ-tBK"/>
                 <constraint firstItem="JBB-QR-rzZ" firstAttribute="bottom" secondItem="6I1-69-o1O" secondAttribute="bottom" constant="-53" id="sr9-sJ-Pn9"/>

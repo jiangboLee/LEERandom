@@ -54,6 +54,12 @@ class LEELotController: UIViewController {
     
     @IBOutlet weak var twoCardsLable: UILabel!
     
+    @IBOutlet weak var iphoneXNavgationBarImage: UIImageView!
+    
+    @IBOutlet weak var iphoneXNavHeight: NSLayoutConstraint!
+    @IBOutlet weak var goBackButtonTop: NSLayoutConstraint!
+    @IBOutlet weak var collectionTop: NSLayoutConstraint!
+    
     private var isMachineImage: Bool = false
     
     fileprivate var animator: UIDynamicAnimator?
@@ -112,9 +118,18 @@ class LEELotController: UIViewController {
         if ISIPHONE_X() {
             
             startButtonBottom.constant = 25.0
+            iphoneXNavgationBarImage.image = #imageLiteral(resourceName: "Navbg.png")
+            iphoneXNavHeight.constant = 97
+            goBackButtonTop.constant = 6 + 28
+            machineTop.constant = 108 + 20
+            collectionTop.constant = 131;
         } else {
             
             startButtonBottom.constant = widthSize * 23.0
+            iphoneXNavgationBarImage.image = #imageLiteral(resourceName: "signboard");
+            iphoneXNavHeight.constant = 69
+            goBackButtonTop.constant = 6;
+            collectionTop.constant = 101;
         }
         
         switchButton1.isUserInteractionEnabled = false
