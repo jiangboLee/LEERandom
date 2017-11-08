@@ -146,7 +146,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入框不能为空" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzg-mU-wxC">
-                                <rect key="frame" x="100.5" y="404.5" width="175" height="29.5"/>
+                                <rect key="frame" x="100.5" y="405.5" width="175" height="28.5"/>
                                 <fontDescription key="fontDescription" name="FZY3JW--GB1-0" family="FZZhunYuan-M02S" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -179,6 +179,7 @@
                         <outlet property="alertLable" destination="mzg-mU-wxC" id="Pzr-6F-jtZ"/>
                         <outlet property="bgImageV" destination="bLO-cI-ygF" id="c6F-Xr-ktd"/>
                         <outlet property="goBackButtonTop" destination="bCX-7W-YnA" id="6wX-lX-Kas"/>
+                        <outlet property="staetButton" destination="AUs-tC-44b" id="rAZ-oc-b1D"/>
                         <outlet property="textField1" destination="Ncb-Dk-Lwb" id="5Uc-3o-hfc"/>
                         <outlet property="textField2" destination="eZq-cJ-2hD" id="Wo3-kh-99w"/>
                         <outlet property="topXconstraint" destination="Jqm-QG-AgV" id="9OO-jN-eso"/>
@@ -413,7 +414,7 @@
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*最少要2张卡片哦~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYE-wp-AgS">
-                                                <rect key="frame" x="94.5" y="471" width="187.5" height="26"/>
+                                                <rect key="frame" x="94.5" y="472" width="187.5" height="25"/>
                                                 <fontDescription key="fontDescription" name="FZY3JW--GB1-0" family="FZZhunYuan-M02S" pointSize="22"/>
                                                 <color key="textColor" red="0.81960784313725488" green="0.73545523084962816" blue="0.084220730695762205" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>

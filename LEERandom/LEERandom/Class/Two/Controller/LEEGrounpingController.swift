@@ -15,6 +15,8 @@ class LEEGrounpingController: UIViewController {
     @IBOutlet weak var alertLable: UILabel!
     @IBOutlet weak var bgImageV: UIImageView!
     
+    @IBOutlet weak var staetButton: HighlightButton!
+    
     @IBOutlet weak var topXconstraint: NSLayoutConstraint!
     
     @IBOutlet weak var goBackButtonTop: NSLayoutConstraint!
@@ -146,7 +148,7 @@ class LEEGrounpingController: UIViewController {
     }
     
     private func animationAlertLable(swith: Int) {
-        
+        staetButton.isUserInteractionEnabled = false
         switch swith {
         case 1:
             alertLable.text = "请输入数字哦"
@@ -168,6 +170,7 @@ class LEEGrounpingController: UIViewController {
            self.alertLable.alpha = 0;
         }) { (_) in
             self.alertLable.isHidden = true
+            self.staetButton.isUserInteractionEnabled = true
         }
         
     }

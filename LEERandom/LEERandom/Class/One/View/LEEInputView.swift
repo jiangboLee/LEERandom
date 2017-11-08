@@ -25,6 +25,9 @@ class LEEInputView: UIView {
     }
     
     @IBAction func sureInputAction(_ sender: HighlightButton) {
+        if (inputTextField.text! as NSString).length == 0 {
+            return;
+        }
         inputTextField.resignFirstResponder()
         self.sureInputBlock?(inputTextField.text!)
         self.removeFromSuperview()
@@ -32,6 +35,8 @@ class LEEInputView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        sureInputButton.isSelected = true
+        sureInputButton.isUserInteractionEnabled = false
         inputViewTop.constant = widthSize * 133;
         sureInputButton.isSelected = true
         inputTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)

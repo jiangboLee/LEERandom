@@ -288,6 +288,11 @@ class LEELotController: UIViewController {
     
     @IBAction func addButtonAction(_ sender: UIButton) {
         var count: Int = Int((ballCount.titleLabel?.text)!)!
+        
+        if count >= 9999 {
+            return;
+        }
+        
         count += 1
     
         ballCount.setTitle("\(count)", for: .normal)
@@ -407,7 +412,7 @@ class LEELotController: UIViewController {
     @IBAction func cardStartAction(_ sender: UIButton) {
         
         if cardArr.count <= 2 {
-            
+            sender.isUserInteractionEnabled = false
             twoCardsLable.isHidden = false;
             twoCardsLable.alpha = 0.5;
             UIView.animate(withDuration: 1, animations: {
@@ -417,6 +422,7 @@ class LEELotController: UIViewController {
                 self.twoCardsLable.alpha = 0;
             }, completion: { (_) in
                 self.twoCardsLable.isHidden = true;
+                sender.isUserInteractionEnabled = true
             })
             
             return;
@@ -538,7 +544,10 @@ extension LEELotController {
         } else if pan.state == .changed {
             leaderAttach?.anchorPoint = loc
         } else if pan.state == .ended {
-            animator?.removeBehavior(leaderAttach!)
+            if let attach = leaderAttach {
+                
+                animator?.removeBehavior(attach)
+            }
         }
     }
     
