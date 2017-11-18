@@ -93,6 +93,7 @@ class LEELotController: UIViewController {
         return v
     }()
     
+    public var widget : Bool?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -141,6 +142,12 @@ class LEELotController: UIViewController {
     
         produce = ProduceRandom.shared
         cardNum = CardRandom.shared
+        if let widgetBool = widget {
+            
+            if widgetBool {
+                switchButton2Action(switchButton2)
+            }
+        }
     }
 
     override var prefersStatusBarHidden: Bool {

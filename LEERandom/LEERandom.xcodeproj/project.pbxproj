@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FE546BC1FBE809800C4C843 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE546BB1FBE809800C4C843 /* NotificationCenter.framework */; };
+		3FE546BF1FBE809800C4C843 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE546BE1FBE809800C4C843 /* TodayViewController.swift */; };
+		3FE546C21FBE809800C4C843 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE546C01FBE809800C4C843 /* MainInterface.storyboard */; };
+		3FE546C61FBE809800C4C843 /* LEERandomWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3FE546B91FBE809800C4C843 /* LEERandomWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B7286DF51F6ABA9B00A758D3 /* LEEEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7286DF41F6ABA9B00A758D3 /* LEEEndView.swift */; };
 		B7286DF71F6ABAA300A758D3 /* LEEEndView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7286DF61F6ABAA300A758D3 /* LEEEndView.xib */; };
 		B7286DF91F6D729200A758D3 /* ProduceRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7286DF81F6D729200A758D3 /* ProduceRandom.swift */; };
@@ -77,7 +81,38 @@
 		B7D6B8FC1F66C29500FB20C8 /* LEEConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8FB1F66C29500FB20C8 /* LEEConfigure.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3FE546C41FBE809800C4C843 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7923E671F6033BF00F671B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FE546B81FBE809800C4C843;
+			remoteInfo = LEERandomWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3FE546CA1FBE809800C4C843 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3FE546C61FBE809800C4C843 /* LEERandomWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3FE546B91FBE809800C4C843 /* LEERandomWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LEERandomWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FE546BB1FBE809800C4C843 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		3FE546BE1FBE809800C4C843 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		3FE546C11FBE809800C4C843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		3FE546C31FBE809800C4C843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FE546CB1FBE811700C4C843 /* LEERandom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LEERandom.entitlements; sourceTree = "<group>"; };
+		3FE546CC1FBE815D00C4C843 /* LEERandomWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LEERandomWidget.entitlements; sourceTree = "<group>"; };
 		B7286DF41F6ABA9B00A758D3 /* LEEEndView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEEEndView.swift; sourceTree = "<group>"; };
 		B7286DF61F6ABAA300A758D3 /* LEEEndView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LEEEndView.xib; sourceTree = "<group>"; };
 		B7286DF81F6D729200A758D3 /* ProduceRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProduceRandom.swift; sourceTree = "<group>"; };
@@ -152,6 +187,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3FE546B61FBE809800C4C843 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FE546BC1FBE809800C4C843 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7923E6C1F6033BF00F671B9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +205,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FE546BA1FBE809800C4C843 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FE546BB1FBE809800C4C843 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FE546BD1FBE809800C4C843 /* LEERandomWidget */ = {
+			isa = PBXGroup;
+			children = (
+				3FE546CC1FBE815D00C4C843 /* LEERandomWidget.entitlements */,
+				3FE546BE1FBE809800C4C843 /* TodayViewController.swift */,
+				3FE546C01FBE809800C4C843 /* MainInterface.storyboard */,
+				3FE546C31FBE809800C4C843 /* Info.plist */,
+			);
+			path = LEERandomWidget;
+			sourceTree = "<group>";
+		};
 		B73F799D1FB0AE1F0082EA94 /* IphoneXSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				B7923E711F6033BF00F671B9 /* LEERandom */,
+				3FE546BD1FBE809800C4C843 /* LEERandomWidget */,
+				3FE546BA1FBE809800C4C843 /* Frameworks */,
 				B7923E701F6033BF00F671B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -184,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				B7923E6F1F6033BF00F671B9 /* LEERandom.app */,
+				3FE546B91FBE809800C4C843 /* LEERandomWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +256,7 @@
 		B7923E711F6033BF00F671B9 /* LEERandom */ = {
 			isa = PBXGroup;
 			children = (
+				3FE546CB1FBE811700C4C843 /* LEERandom.entitlements */,
 				B7923E791F6033BF00F671B9 /* Assets.xcassets */,
 				B7923E721F6033BF00F671B9 /* AppDelegate.swift */,
 				B7923E761F6033BF00F671B9 /* Main.storyboard */,
@@ -386,6 +452,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3FE546B81FBE809800C4C843 /* LEERandomWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FE546C91FBE809800C4C843 /* Build configuration list for PBXNativeTarget "LEERandomWidget" */;
+			buildPhases = (
+				3FE546B51FBE809800C4C843 /* Sources */,
+				3FE546B61FBE809800C4C843 /* Frameworks */,
+				3FE546B71FBE809800C4C843 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LEERandomWidget;
+			productName = LEERandomWidget;
+			productReference = 3FE546B91FBE809800C4C843 /* LEERandomWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B7923E6E1F6033BF00F671B9 /* LEERandom */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B7923E811F6033BF00F671B9 /* Build configuration list for PBXNativeTarget "LEERandom" */;
@@ -393,10 +476,12 @@
 				B7923E6B1F6033BF00F671B9 /* Sources */,
 				B7923E6C1F6033BF00F671B9 /* Frameworks */,
 				B7923E6D1F6033BF00F671B9 /* Resources */,
+				3FE546CA1FBE809800C4C843 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3FE546C51FBE809800C4C843 /* PBXTargetDependency */,
 			);
 			name = LEERandom;
 			productName = LEERandom;
@@ -410,14 +495,29 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = LEE;
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = lijiangbo;
 				TargetAttributes = {
+					3FE546B81FBE809800C4C843 = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = 47W28PSMV7;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					B7923E6E1F6033BF00F671B9 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 47W28PSMV7;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -435,11 +535,20 @@
 			projectRoot = "";
 			targets = (
 				B7923E6E1F6033BF00F671B9 /* LEERandom */,
+				3FE546B81FBE809800C4C843 /* LEERandomWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3FE546B71FBE809800C4C843 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FE546C21FBE809800C4C843 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7923E6D1F6033BF00F671B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -464,6 +573,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3FE546B51FBE809800C4C843 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FE546BF1FBE809800C4C843 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7923E6B1F6033BF00F671B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -527,7 +644,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3FE546C51FBE809800C4C843 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3FE546B81FBE809800C4C843 /* LEERandomWidget */;
+			targetProxy = 3FE546C41FBE809800C4C843 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		3FE546C01FBE809800C4C843 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FE546C11FBE809800C4C843 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		B7923E761F6033BF00F671B9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -548,6 +681,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3FE546C71FBE809800C4C843 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = LEERandomWidget/LEERandomWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 47W28PSMV7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = LEERandomWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lijiangbo.LEERandom.LEERandomWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3FE546C81FBE809800C4C843 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = LEERandomWidget/LEERandomWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 47W28PSMV7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = LEERandomWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lijiangbo.LEERandom.LEERandomWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B7923E7F1F6033BF00F671B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -658,8 +833,11 @@
 		B7923E821F6033BF00F671B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = LEERandom/LEERandom.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 47W28PSMV7;
 				INFOPLIST_FILE = LEERandom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -674,8 +852,11 @@
 		B7923E831F6033BF00F671B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = LEERandom/LEERandom.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 47W28PSMV7;
 				INFOPLIST_FILE = LEERandom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -690,6 +871,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3FE546C91FBE809800C4C843 /* Build configuration list for PBXNativeTarget "LEERandomWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FE546C71FBE809800C4C843 /* Debug */,
+				3FE546C81FBE809800C4C843 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B7923E6A1F6033BF00F671B9 /* Build configuration list for PBXProject "LEERandom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

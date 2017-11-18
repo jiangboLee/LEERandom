@@ -87,7 +87,7 @@
         <!--Grounping Controller-->
         <scene sceneID="Ku6-90-uVi">
             <objects>
-                <viewController id="Z4f-Lz-oAD" customClass="LEEGrounpingController" customModule="LEERandom" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LEEGrounpingController" id="Z4f-Lz-oAD" customClass="LEEGrounpingController" customModule="LEERandom" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2ws-nE-ahJ"/>
                         <viewControllerLayoutGuide type="bottom" id="DjK-v2-odK"/>
@@ -192,7 +192,7 @@
         <!--Lot Controller-->
         <scene sceneID="tEQ-3S-ojQ">
             <objects>
-                <viewController id="VGz-t0-PHF" customClass="LEELotController" customModule="LEERandom" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LEELotController" id="VGz-t0-PHF" customClass="LEELotController" customModule="LEERandom" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YrP-3K-mNg"/>
                         <viewControllerLayoutGuide type="bottom" id="YD3-Jl-02R"/>

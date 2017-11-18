@@ -41,6 +41,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        if url.description.hasPrefix("LEERandomWidget://") {
+            let nav = application.keyWindow?.rootViewController as! LEENavController
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            if url.description.hasSuffix("qiuqiu") {
+                nav.pushViewController(storyboard.instantiateViewController(withIdentifier: "LEELotController"), animated: true)
+            } else if url.description.hasSuffix("card") {
+                let vc = storyboard.instantiateViewController(withIdentifier: "LEELotController") as! LEELotController
+                vc.widget = true
+                nav.pushViewController(vc, animated: true)
+            } else if url.description.hasSuffix("group") {
+                nav.pushViewController(storyboard.instantiateViewController(withIdentifier: "LEEGrounpingController"), animated: true)
+            }
+        }
+        
+        return true
+    }
+    
 
 }
 
