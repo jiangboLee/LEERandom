@@ -79,6 +79,7 @@
 		B7D6B8F81F6541C900FB20C8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8F71F6541C900FB20C8 /* UIView+Extension.swift */; };
 		B7D6B8FA1F65769800FB20C8 /* LEECircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8F91F65769800FB20C8 /* LEECircleImage.swift */; };
 		B7D6B8FC1F66C29500FB20C8 /* LEEConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8FB1F66C29500FB20C8 /* LEEConfigure.swift */; };
+		B7ECE7501FC032FE006A8004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7923E791F6033BF00F671B9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -545,6 +546,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7ECE7501FC032FE006A8004 /* Assets.xcassets in Resources */,
 				3FE546C21FBE809800C4C843 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

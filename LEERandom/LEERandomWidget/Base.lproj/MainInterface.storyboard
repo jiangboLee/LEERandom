@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,31 +22,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06f-CD-v2w">
-                                <rect key="frame" x="25" y="35" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="抽球球"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06f-CD-v2w">
+                                <rect key="frame" x="16" y="0.0" width="96" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5E0-TZ-bt1"/>
+                                </constraints>
+                                <state key="normal" image="抽球球"/>
                                 <connections>
                                     <action selector="ballAction:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="pqb-Gf-vTX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhb-k5-7h7">
-                                <rect key="frame" x="137" y="35" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="翻卡片"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhb-k5-7h7">
+                                <rect key="frame" x="112" y="0.0" width="96" height="100"/>
+                                <state key="normal" image="翻卡片"/>
                                 <connections>
                                     <action selector="cardAction:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="mjs-mA-muG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xc-hc-rbT">
-                                <rect key="frame" x="228" y="35" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="快速分组"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xc-hc-rbT">
+                                <rect key="frame" x="208" y="0.0" width="96" height="100"/>
+                                <state key="normal" image="快速分组"/>
                                 <connections>
                                     <action selector="groupAction:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="ovd-yI-8bC"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Vhb-k5-7h7" firstAttribute="centerY" secondItem="06f-CD-v2w" secondAttribute="centerY" id="3H5-c5-caG"/>
+                            <constraint firstItem="Vhb-k5-7h7" firstAttribute="height" secondItem="06f-CD-v2w" secondAttribute="height" id="7Nd-Ho-Ktv"/>
+                            <constraint firstItem="Vhb-k5-7h7" firstAttribute="leading" secondItem="06f-CD-v2w" secondAttribute="trailing" id="8lm-M6-HU8"/>
+                            <constraint firstItem="5O8-fx-ZSw" firstAttribute="top" secondItem="06f-CD-v2w" secondAttribute="bottom" id="9c3-YL-Ike"/>
+                            <constraint firstItem="4Xc-hc-rbT" firstAttribute="width" secondItem="06f-CD-v2w" secondAttribute="width" id="cib-JS-DY7"/>
+                            <constraint firstItem="Vhb-k5-7h7" firstAttribute="width" secondItem="06f-CD-v2w" secondAttribute="width" id="hXw-JL-fZg"/>
+                            <constraint firstItem="4Xc-hc-rbT" firstAttribute="height" secondItem="06f-CD-v2w" secondAttribute="height" id="l65-Zd-MQF"/>
+                            <constraint firstItem="06f-CD-v2w" firstAttribute="top" secondItem="mxm-dg-dJE" secondAttribute="bottom" id="o8e-Ox-Q6H"/>
+                            <constraint firstItem="06f-CD-v2w" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="ocQ-Lx-eJN"/>
+                            <constraint firstItem="4Xc-hc-rbT" firstAttribute="centerY" secondItem="06f-CD-v2w" secondAttribute="centerY" id="osj-uy-wUQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Xc-hc-rbT" secondAttribute="trailing" id="rpV-pP-vvH"/>
+                            <constraint firstItem="4Xc-hc-rbT" firstAttribute="leading" secondItem="Vhb-k5-7h7" secondAttribute="trailing" id="zNd-p2-Iyr"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -56,4 +71,9 @@
             <point key="canvasLocation" x="33.600000000000001" y="44.977511244377816"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="快速分组" width="69" height="69"/>
+        <image name="抽球球" width="69" height="69"/>
+        <image name="翻卡片" width="69" height="69"/>
+    </resources>
 </document>

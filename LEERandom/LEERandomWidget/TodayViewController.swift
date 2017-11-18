@@ -27,10 +27,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     //设置展开和折叠
-    @available(iOSApplicationExtension 10.0, *)
-    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        
-    }
+//    @available(iOSApplicationExtension 10.0, *)
+//    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+//
+//
+//    }
     
     @IBAction func ballAction(_ sender: UIButton) {
         
