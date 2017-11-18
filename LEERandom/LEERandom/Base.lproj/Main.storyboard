@@ -146,7 +146,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入框不能为空" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzg-mU-wxC">
-                                <rect key="frame" x="100.5" y="405.5" width="175" height="28.5"/>
+                                <rect key="frame" x="100.5" y="404.5" width="175" height="29.5"/>
                                 <fontDescription key="fontDescription" name="FZY3JW--GB1-0" family="FZZhunYuan-M02S" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -414,7 +414,7 @@
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*最少要2张卡片哦~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYE-wp-AgS">
-                                                <rect key="frame" x="94.5" y="472" width="187.5" height="25"/>
+                                                <rect key="frame" x="94.5" y="471" width="187.5" height="26"/>
                                                 <fontDescription key="fontDescription" name="FZY3JW--GB1-0" family="FZZhunYuan-M02S" pointSize="22"/>
                                                 <color key="textColor" red="0.81960784313725488" green="0.73545523084962816" blue="0.084220730695762205" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
