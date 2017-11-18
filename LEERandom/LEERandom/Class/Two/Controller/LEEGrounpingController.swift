@@ -50,6 +50,16 @@ class LEEGrounpingController: UIViewController {
     }
 
     
+    //MARK: 规则
+    
+    @IBAction func ruleGroupAction(_ sender: Any) {
+       
+        let ruleView = UINib(nibName: "LEERuleDescView", bundle: nil).instantiate(withOwner: nil, options: nil).last as! LEERuleDescView
+        ruleView.frame = UIScreen.main.bounds
+        ruleView.type = .RuleTypeGroup
+        UIApplication.shared.keyWindow?.addSubview(ruleView)
+    }
+    
     @IBAction func beiginGroupingAction(_ sender: Any) {
         
         guard let num = textField1.text else {

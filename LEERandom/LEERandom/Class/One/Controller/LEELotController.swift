@@ -60,6 +60,10 @@ class LEELotController: UIViewController {
     @IBOutlet weak var goBackButtonTop: NSLayoutConstraint!
     @IBOutlet weak var collectionTop: NSLayoutConstraint!
     
+    @IBOutlet weak var ruleButtonTop: NSLayoutConstraint!
+    
+    @IBOutlet weak var ruleCardButtonTop: NSLayoutConstraint!
+    
     private var isMachineImage: Bool = false
     
     fileprivate var animator: UIDynamicAnimator?
@@ -124,6 +128,8 @@ class LEELotController: UIViewController {
             goBackButtonTop.constant = 6 + 28
             machineTop.constant = 108 + 20
             collectionTop.constant = 131;
+            ruleButtonTop.constant = 100;
+            ruleCardButtonTop.constant = 100;
         } else {
             
             startButtonBottom.constant = widthSize * 23.0
@@ -131,6 +137,8 @@ class LEELotController: UIViewController {
             iphoneXNavHeight.constant = 69
             goBackButtonTop.constant = 6;
             collectionTop.constant = 101;
+            ruleButtonTop.constant = 70*widthSize;
+            ruleCardButtonTop.constant = 70*widthSize;
         }
         
         switchButton1.isUserInteractionEnabled = false
@@ -142,6 +150,11 @@ class LEELotController: UIViewController {
     
         produce = ProduceRandom.shared
         cardNum = CardRandom.shared
+        
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if let widgetBool = widget {
             
             if widgetBool {
@@ -149,7 +162,7 @@ class LEELotController: UIViewController {
             }
         }
     }
-
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -458,6 +471,27 @@ class LEELotController: UIViewController {
             motionManger = nil;
         }
     }
+    
+    //MARK: 规则说明
+    
+    @IBAction func ruleLookClickAction(_ sender: Any) {
+        
+        let ruleView = UINib(nibName: "LEERuleDescView", bundle: nil).instantiate(withOwner: nil, options: nil).last as! LEERuleDescView
+        ruleView.frame = UIScreen.main.bounds
+        ruleView.type = .RuleTypeBall
+        UIApplication.shared.keyWindow?.addSubview(ruleView)
+        
+    }
+    
+    @IBAction func ruleCardAction(_ sender: Any) {
+        
+        let ruleView = UINib(nibName: "LEERuleDescView", bundle: nil).instantiate(withOwner: nil, options: nil).last as! LEERuleDescView
+        ruleView.frame = UIScreen.main.bounds
+        ruleView.type = .RuleTypeCard
+        UIApplication.shared.keyWindow?.addSubview(ruleView)
+    }
+    
+    
     deinit {
 //        print("释放了")
     }

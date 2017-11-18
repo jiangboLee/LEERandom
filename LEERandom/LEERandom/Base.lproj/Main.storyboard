@@ -151,6 +151,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQm-nL-lXQ">
+                                <rect key="frame" x="138" y="626" width="99" height="31"/>
+                                <state key="normal" image="fenzu-shuoming-icon"/>
+                                <connections>
+                                    <action selector="ruleGroupAction:" destination="Z4f-Lz-oAD" eventType="touchUpInside" id="tK3-lh-TkZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -164,6 +171,8 @@
                             <constraint firstItem="Ncb-Dk-Lwb" firstAttribute="leading" secondItem="sqU-GV-Ctl" secondAttribute="trailing" constant="20" id="RFT-bn-aE9"/>
                             <constraint firstItem="CRa-EM-1n9" firstAttribute="leading" secondItem="Wbd-FG-e60" secondAttribute="leading" constant="34" id="XH6-Q5-pZg"/>
                             <constraint firstItem="CRa-EM-1n9" firstAttribute="top" secondItem="Wbd-FG-e60" secondAttribute="top" constant="34" id="bCX-7W-YnA"/>
+                            <constraint firstItem="oQm-nL-lXQ" firstAttribute="centerX" secondItem="Wbd-FG-e60" secondAttribute="centerX" id="cbE-A6-1Q2"/>
+                            <constraint firstItem="DjK-v2-odK" firstAttribute="top" secondItem="oQm-nL-lXQ" secondAttribute="bottom" constant="10" id="efu-9O-NxQ"/>
                             <constraint firstItem="bLO-cI-ygF" firstAttribute="leading" secondItem="Wbd-FG-e60" secondAttribute="leading" id="f0Y-Ba-bnW"/>
                             <constraint firstItem="bLO-cI-ygF" firstAttribute="top" secondItem="Wbd-FG-e60" secondAttribute="top" id="g2T-hN-5Tr"/>
                             <constraint firstItem="DjK-v2-odK" firstAttribute="top" secondItem="AUs-tC-44b" secondAttribute="bottom" constant="163" id="j8R-lH-9yO"/>
@@ -311,6 +320,13 @@
                                                             <action selector="subtractButtonAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="RLl-TC-s86"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUk-zj-Rio">
+                                                        <rect key="frame" x="295" y="70" width="80" height="23"/>
+                                                        <state key="normal" image="chouqiuqiu-shuoming-icon"/>
+                                                        <connections>
+                                                            <action selector="ruleLookClickAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="Jqr-t8-RYD"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -325,6 +341,7 @@
                                                     <constraint firstItem="A3M-SB-Mmc" firstAttribute="centerX" secondItem="0Qo-EO-u2f" secondAttribute="centerX" constant="1" id="NXH-s3-pi6"/>
                                                     <constraint firstItem="3aM-ue-UsN" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="Nc6-QW-qrC"/>
                                                     <constraint firstAttribute="trailing" secondItem="hKj-cz-MtG" secondAttribute="trailing" constant="20" id="P4X-bh-TMz"/>
+                                                    <constraint firstItem="OUk-zj-Rio" firstAttribute="top" secondItem="0Qo-EO-u2f" secondAttribute="top" constant="70" id="U0g-m3-ecD"/>
                                                     <constraint firstItem="9WA-Lm-U2C" firstAttribute="trailing" secondItem="A3M-SB-Mmc" secondAttribute="trailing" id="XAx-2A-Khi"/>
                                                     <constraint firstItem="zYa-fn-JKY" firstAttribute="top" secondItem="jCO-DB-fpj" secondAttribute="bottom" constant="8" id="ZRw-Wc-Yjc"/>
                                                     <constraint firstItem="hKj-cz-MtG" firstAttribute="centerY" secondItem="cqR-S9-7So" secondAttribute="centerY" id="c3i-bR-320"/>
@@ -334,6 +351,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="X0b-4f-rgY" secondAttribute="bottom" id="qQG-j8-Wbk"/>
                                                     <constraint firstItem="3aM-ue-UsN" firstAttribute="trailing" secondItem="zYa-fn-JKY" secondAttribute="trailing" constant="5" id="r0w-yU-PhJ"/>
                                                     <constraint firstItem="kWy-0r-vRg" firstAttribute="centerX" secondItem="jCO-DB-fpj" secondAttribute="centerX" id="sgP-aN-JtZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OUk-zj-Rio" secondAttribute="trailing" id="t6h-5b-a2E"/>
                                                     <constraint firstItem="9WA-Lm-U2C" firstAttribute="top" secondItem="A3M-SB-Mmc" secondAttribute="top" id="ueV-Oh-8Cj"/>
                                                     <constraint firstAttribute="bottomMargin" secondItem="hKj-cz-MtG" secondAttribute="bottom" constant="20" id="vmC-fI-ww0"/>
                                                     <constraint firstItem="X0b-4f-rgY" firstAttribute="top" secondItem="0Qo-EO-u2f" secondAttribute="top" id="wXq-sL-unT"/>
@@ -355,6 +373,13 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg3" translatesAutoresizingMaskIntoConstraints="NO" id="PfM-lC-mWK">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ny-9N-6aI">
+                                                <rect key="frame" x="295" y="70" width="80" height="23"/>
+                                                <state key="normal" image="chouqiuqiu-shuoming-icon"/>
+                                                <connections>
+                                                    <action selector="ruleCardAction:" destination="VGz-t0-PHF" eventType="touchUpInside" id="IVO-pJ-vsG"/>
+                                                </connections>
+                                            </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KwZ-SP-HPe">
                                                 <rect key="frame" x="32" y="101" width="310" height="440"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -431,8 +456,10 @@
                                             <constraint firstItem="KwZ-SP-HPe" firstAttribute="leading" secondItem="axF-rj-Set" secondAttribute="leading" constant="32" id="Ibl-44-7Zs"/>
                                             <constraint firstItem="fYE-wp-AgS" firstAttribute="centerX" secondItem="axF-rj-Set" secondAttribute="centerX" id="M9i-uw-QqS"/>
                                             <constraint firstItem="KwZ-SP-HPe" firstAttribute="centerX" secondItem="axF-rj-Set" secondAttribute="centerX" id="N8O-5h-fca"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Ny-9N-6aI" secondAttribute="trailing" id="P6E-lk-Q6D"/>
                                             <constraint firstItem="PfM-lC-mWK" firstAttribute="top" secondItem="axF-rj-Set" secondAttribute="top" id="Y9Z-DG-HQT"/>
                                             <constraint firstItem="CFU-6e-EhI" firstAttribute="centerX" secondItem="axF-rj-Set" secondAttribute="centerX" id="ozW-1G-hlO"/>
+                                            <constraint firstItem="2Ny-9N-6aI" firstAttribute="top" secondItem="axF-rj-Set" secondAttribute="top" constant="70" id="vuD-kV-Soc"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -555,6 +582,8 @@
                         <outlet property="machineTop" destination="MEv-9x-N5y" id="4AX-rD-gKS"/>
                         <outlet property="machineWidth" destination="y9T-44-NU6" id="bvc-Oj-sSB"/>
                         <outlet property="removeSameButton" destination="MW4-ch-9nK" id="Pjd-iT-W6l"/>
+                        <outlet property="ruleButtonTop" destination="U0g-m3-ecD" id="oDV-OK-azD"/>
+                        <outlet property="ruleCardButtonTop" destination="vuD-kV-Soc" id="kdk-fp-G4b"/>
                         <outlet property="setValueLable" destination="jCO-DB-fpj" id="9yI-1t-WAL"/>
                         <outlet property="startButtonBottom" destination="vmC-fI-ww0" id="PTH-Y4-JWQ"/>
                         <outlet property="startButtonWidth" destination="6Ub-P6-3AF" id="lQG-Kx-wkg"/>
@@ -593,6 +622,8 @@
         <image name="bg" width="375" height="667"/>
         <image name="bg1" width="375" height="667"/>
         <image name="bg3" width="375" height="667"/>
+        <image name="chouqiuqiu-shuoming-icon" width="80" height="23"/>
+        <image name="fenzu-shuoming-icon" width="99" height="31"/>
         <image name="fenzu_bg" width="375" height="667"/>
         <image name="icon-fenzu" width="141" height="54"/>
         <image name="icon-zhuajiu" width="142" height="55"/>

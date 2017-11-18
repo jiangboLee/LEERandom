@@ -80,6 +80,8 @@
 		B7D6B8FA1F65769800FB20C8 /* LEECircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8F91F65769800FB20C8 /* LEECircleImage.swift */; };
 		B7D6B8FC1F66C29500FB20C8 /* LEEConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D6B8FB1F66C29500FB20C8 /* LEEConfigure.swift */; };
 		B7ECE7501FC032FE006A8004 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7923E791F6033BF00F671B9 /* Assets.xcassets */; };
+		B7ECE7521FC04826006A8004 /* LEERuleDescView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ECE7511FC04826006A8004 /* LEERuleDescView.swift */; };
+		B7ECE7541FC0482F006A8004 /* LEERuleDescView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7ECE7531FC0482F006A8004 /* LEERuleDescView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +187,8 @@
 		B7D6B8F71F6541C900FB20C8 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B7D6B8F91F65769800FB20C8 /* LEECircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEECircleImage.swift; sourceTree = "<group>"; };
 		B7D6B8FB1F66C29500FB20C8 /* LEEConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LEEConfigure.swift; sourceTree = "<group>"; };
+		B7ECE7511FC04826006A8004 /* LEERuleDescView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEERuleDescView.swift; sourceTree = "<group>"; };
+		B7ECE7531FC0482F006A8004 /* LEERuleDescView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LEERuleDescView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +339,8 @@
 				B7286E021F72A03300A758D3 /* LEECardInputView.swift */,
 				B7286E041F72A03B00A758D3 /* LEECardInputView.xib */,
 				B7286E0A1F73F82500A758D3 /* LEECardCollectionViewCell.swift */,
+				B7ECE7511FC04826006A8004 /* LEERuleDescView.swift */,
+				B7ECE7531FC0482F006A8004 /* LEERuleDescView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 				B7286E071F72A4DD00A758D3 /* 方正准圆简体.ttf in Resources */,
 				B7C036991F6429A40032311C /* Info.plist in Resources */,
 				B7C036A11F6526350032311C /* 方正综艺_GBK的副本.ttf in Resources */,
+				B7ECE7541FC0482F006A8004 /* LEERuleDescView.xib in Resources */,
 				B7923E7D1F6033BF00F671B9 /* LaunchScreen.storyboard in Resources */,
 				B7286DF71F6ABAA300A758D3 /* LEEEndView.xib in Resources */,
 				B7923E7A1F6033BF00F671B9 /* Assets.xcassets in Resources */,
@@ -595,6 +602,7 @@
 				B7C036831F6429A40032311C /* ConstraintItem.swift in Sources */,
 				B7286E031F72A03300A758D3 /* LEECardInputView.swift in Sources */,
 				B7C0369A1F6429A40032311C /* LayoutConstraint.swift in Sources */,
+				B7ECE7521FC04826006A8004 /* LEERuleDescView.swift in Sources */,
 				B7286E0B1F73F82500A758D3 /* LEECardCollectionViewCell.swift in Sources */,
 				B7C036901F6429A40032311C /* ConstraintOffsetTarget.swift in Sources */,
 				B7286E0D1F73FBD500A758D3 /* UIColor+Extension.swift in Sources */,
